@@ -1,0 +1,5 @@
+update-config:
+  volumes:
+    - '/config:/git'
+  image: alpine/git
+  command: pull
