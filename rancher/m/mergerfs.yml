@@ -1,0 +1,18 @@
+mergerfs:
+  container_name: mergerfs
+  volumes:
+    - '~/config:/config'
+    - '/mnt/A:/source1'
+    - '/mnt/B:/source2'
+    - '/mnt/C:/source3'
+    - 'mnt/media:/mountpoint:shared'
+  security_opt:
+    - apparmor:unconfined
+  cap_add:
+    - CAP_SYS_ADMIN
+  devices:
+    - /dev/fuse
+  environment:
+    - 'ARGS=-o minfreespace=1K -o use_ino -o hard_remove -o category.create=mfs'
+  image: hotio/mergerfs
+  restart: always

@@ -1,0 +1,8 @@
+traefik:
+  ports:
+    - '8080:8080'
+    - '80:80'
+  volumes:
+    - '$PWD/traefik.yml:/etc/traefik/traefik.yml'
+    - '/var/run/docker.sock:/var/run/docker.sock'
+  image: 'traefik:v2.0'
