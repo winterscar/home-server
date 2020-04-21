@@ -1,0 +1,15 @@
+home-assistant:
+  container_name: home-assistant
+  restart: unless-stopped
+  image: homeassistant/home-assistant
+  network_mode: host
+  depends_on:
+    - mqtt
+    - unifi
+    - influxdb
+  expose:
+     - "8123"
+  volumes:
+    - ${CONFIG_ROOT}/home-assistant/config:/config
+    - /etc/localtime:/etc/localtime:ro
+    - ${CONFIG_ROOT}/hass/media:/media
