@@ -1,5 +1,11 @@
-update-config:
+webhook:
+  restart: unless-stopped
+  image: staticfloat/docker-webhook
   volumes:
-    - '/config:/git'
-  image: alpine/git
-  command: pull
+    - ./:/config
+    - /var/run/docker.sock:/var/run/docker.sock
+  environment:
+    - WEBHOOK_SECRET=${WEBHOOK_SECRET}
+    - WEBHOOK_HOOKS_DIR=/config/rancher/u/update-config/hooks      
+  expose:
+    - 8000

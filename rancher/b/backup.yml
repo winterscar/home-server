@@ -1,0 +1,13 @@
+backup:
+  container_name: autobackup
+  volumes:
+    - '/config:/data'
+    - '/config/rancher/b/odb-token.json:/config/odb-token.json'
+  environment:
+    - 'BACKUP_NAME=home-server-backups'
+    - 'BACKUP_LOCATION=odb://backups/home-server'
+    - 'BACKUP_SCHEDULE=0 2 * * *'
+    - 'ONEDRIVE_TOKEN_FILE=/config/odb-token.json'
+    - 'DUPLICACY_PRUNE_OPTIONS=-keep 0:360 -keep 30:180 -keep 7:30'
+    - 'PRUNE_SCHEDULE=0 0 * * *'
+  image: christophetd/duplicacy-autobackup
