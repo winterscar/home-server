@@ -1,10 +1,8 @@
 mergerfs:
   container_name: mergerfs
   volumes:
-    - '~/config:/config'
-    - '/mnt/A:/source1'
-    - '/mnt/B:/source2'
-    - '/mnt/C:/source3'
+    - '/config/mergerfs:/config'
+    - '/mnt/raw:/source'
     - 'mnt/media:/mountpoint:shared'
   security_opt:
     - apparmor:unconfined
@@ -14,5 +12,6 @@ mergerfs:
     - /dev/fuse
   environment:
     - 'ARGS=-o minfreespace=1K -o use_ino -o hard_remove -o category.create=mfs'
+    - 'BRANCHES=/source/*'
   image: hotio/mergerfs
   restart: always

@@ -14,7 +14,7 @@ Starting from a blank slate, the following steps will bring you back up to a ful
       -c  https://raw.githubusercontent.com/winterscar/home-server/master/rancher/cloud-config.yml \
       -d /dev/sda
     ```
-    > Note: The cloud config expects a certain hard-drive configuration on the bare metal. Ensure this matches the physical machine configuration before installing.
+    > Note: You can the cloud-config expects disks labled filesN to contain media, and will mount them as such. If you have a different disk configuration, update the cloud config or lable your disks. 
     > Also ensure your public SSH key is present in the cloud-config file or you will not be able to log in.
 
 3. Your server will restart, installing Rancher OS to the disk. Once this has happened, ssh into the server and run the following commands to get started:
@@ -27,3 +27,8 @@ Starting from a blank slate, the following steps will bring you back up to a ful
     > duplicacity restore -r [DESIRED REVISION (usually latest)]
     ```
     > You will need to provide a one-token.json file. You can get one from [here](https://duplicacy.com/one_start).
+
+
+# Adding new services
+[...]
+Beware that there is an overly aggressive caching of yml files - so when you push a new yml file to your repo, you need to delete the files in `/var/lib/rancher/cache`.
