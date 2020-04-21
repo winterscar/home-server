@@ -1,7 +1,7 @@
 mergerfs:
   container_name: mergerfs
   volumes:
-    - '/config/mergerfs:/config'
+    - 'mnt/config/mergerfs:/config'
     - '/mnt/raw:/source'
     - 'mnt/media:/mountpoint:shared'
   security_opt:

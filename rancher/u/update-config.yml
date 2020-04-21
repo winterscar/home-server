@@ -2,7 +2,7 @@ webhook:
   restart: unless-stopped
   image: staticfloat/docker-webhook
   volumes:
-    - ./:/config
+    - /mnt/config:/config
     - /var/run/docker.sock:/var/run/docker.sock
   environment:
     - WEBHOOK_SECRET=${WEBHOOK_SECRET}

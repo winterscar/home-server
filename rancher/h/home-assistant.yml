@@ -6,5 +6,5 @@ home-assistant:
   expose:
      - "8123"
   volumes:
-    - /config/home-assistant/config:/config
+    - /mnt/config/home-assistant:/config
     - /etc/localtime:/etc/localtime:ro
