@@ -1,4 +1,5 @@
 services:
-  - clone-config
+  - update-config
+  - home-assistant
   - mergerfs
   - traefik
