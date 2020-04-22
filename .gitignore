@@ -1,1 +1,5 @@
 rancher/b/one-token.json
+home-assistant/deps
+home-assistant/tts
+home-assistant/*.log
+home-assistant/*.db
