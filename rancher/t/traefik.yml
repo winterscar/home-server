@@ -5,4 +5,4 @@ traefik:
   volumes:
     - '/mnt/config/traefik/traefik.yml:/etc/traefik/traefik.yml'
     - '/var/run/docker.sock:/var/run/docker.sock'
-  image: 'traefik:v2.0'
+  image: 'traefik:v2.2'
