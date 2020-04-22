@@ -32,3 +32,7 @@ Starting from a blank slate, the following steps will bring you back up to a ful
 # Adding new services
 [...]
 Beware that there is an overly aggressive caching of yml files - so when you push a new yml file to your repo, you need to delete the files in `/var/lib/rancher/cache`.
+
+# Making changes
+
+docker run -ti --rm -v ${HOME}:/root -v $(pwd):/git alpine/git diff --name-only master origin/master
