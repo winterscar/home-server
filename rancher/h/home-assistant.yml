@@ -8,3 +8,5 @@ home-assistant:
   volumes:
     - /mnt/config/home-assistant:/config
     - /etc/localtime:/etc/localtime:ro
+  labels:
+    - traefik.http.services.home-assistant.rule=Host('home.rancher.pasquet.co')
