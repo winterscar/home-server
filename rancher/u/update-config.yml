@@ -12,4 +12,3 @@ update-config:
   labels:
     - "traefik.enable=true"
     - "traefik.http.routers.update-config.rule=Host(`update.rancher.pasquet.co`)"
-    - "traefik.http.services.update-config.loadbalancer.server.port=8123"
