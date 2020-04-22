@@ -36,5 +36,3 @@ Beware that there is an overly aggressive caching of yml files - so when you pus
 # Making changes
 
 docker run -ti --rm -v ${HOME}:/root -v $(pwd):/git alpine/git diff --name-only master origin/master
-
-Testing webhook :)
