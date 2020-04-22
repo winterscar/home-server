@@ -1,5 +1,5 @@
 backup:
-  container_name: autobackup
+  container_name: backup
   volumes:
     - '/mnt/config:/data'
   environment:

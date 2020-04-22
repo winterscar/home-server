@@ -3,3 +3,4 @@ services:
   - home-assistant
   - mergerfs
   - traefik
+  - backup
