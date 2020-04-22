@@ -1,6 +1,6 @@
 # Docker configuration backend
 providers:
-    rancher: {}
+  docker: {}
 # API and dashboard configuration
 api:
   insecure: true

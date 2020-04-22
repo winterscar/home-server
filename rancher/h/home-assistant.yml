@@ -9,4 +9,7 @@ home-assistant:
     - /mnt/config/home-assistant:/config
     - /etc/localtime:/etc/localtime:ro
   labels:
-    - traefik.http.services.home-assistant.rule=Host('home.rancher.pasquet.co')
+    - "traefik.enable=true"
+    - "traefik.backend=home-assistant"
+    - "traefik.frontend.rule=Host:home.rancher.pasquet.co"
+    - "traefik.port=8123"
