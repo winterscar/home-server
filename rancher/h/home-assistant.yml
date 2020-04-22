@@ -10,6 +10,5 @@ home-assistant:
     - /etc/localtime:/etc/localtime:ro
   labels:
     - "traefik.enable=true"
-    - "traefik.backend=home-assistant"
-    - "traefik.frontend.rule=Host:home.rancher.pasquet.co"
-    - "traefik.port=8123"
+    - "traefik.http.routers.home-assistant.rule=Host(`home.rancher.pasquet.co`)"
+    - "traefik.http.services.ome-assistant.loadbalancer.server.port=8123"
