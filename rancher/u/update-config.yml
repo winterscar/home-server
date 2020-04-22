@@ -1,4 +1,4 @@
-webhook:
+update-config:
   restart: unless-stopped
   image: staticfloat/docker-webhook
   volumes:

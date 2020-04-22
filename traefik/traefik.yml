@@ -2,7 +2,6 @@
 providers:
   docker:
     exposedbydefault: false
-    domain: 'rancher.pasquet.co'
 # API and dashboard configuration
 api:
   insecure: true
