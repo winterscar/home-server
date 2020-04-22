@@ -1,7 +1,7 @@
 # Docker configuration backend
 providers:
     docker:
-      defaultRule: "Host(`{{ trimPrefix `/` .Name }}.docker.localhost`)"
+      defaultRule: "Host(`{{ trimPrefix `/` .Name }}.rancher.pasquet.co`)"
 # API and dashboard configuration
 api:
   insecure: true
