@@ -5,7 +5,7 @@ webhook:
     - /mnt/config:/config
     - /var/run/docker.sock:/var/run/docker.sock
   environment:
-    - WEBHOOK_SECRET=${WEBHOOK_SECRET}
+    - WEBHOOK_SECRET='this is a test secret'
     - WEBHOOK_HOOKS_DIR=/config/rancher/u/update-config/hooks      
   expose:
     - 8000
