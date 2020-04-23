@@ -1,0 +1,12 @@
+restart: unless-stopped
+volumes:
+  - /mnt/config/adguard/conf:/opt/adguardhome/conf
+  - /mnt/config/adguard/work:/opt/adguardhome/work
+  - /etc/localtime:/etc/localtime:ro
+ports:
+  - "53:53"
+  - "67:67/udp"
+  - "68:68"
+  - "853:853/tcp"
+  - "3000:3000/tcp"
+image: adguard/adguardhome
