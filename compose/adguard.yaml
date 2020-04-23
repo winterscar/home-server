@@ -9,4 +9,5 @@ ports:
   - "68:68"
   - "853:853/tcp"
   - "3000:3000/tcp"
+  - "8090:8090"
 image: adguard/adguardhome
