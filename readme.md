@@ -28,10 +28,27 @@ Starting from a blank slate, the following steps will bring you back up to a ful
     ```
     > You will need to provide a one-token.json file. You can get one from [here](https://duplicacy.com/one_start).
 
-4. Finally, run  the following to start all the services
+4. Finally, run  the following to start all the services:
     ```bash
     docker run --rm docker/compose up -d /mnt/config/compose/docker-compose.yaml
     ```
+
+# Configuring services
+The home server defines two kinds of services: `System Services` and `Application Services`
+
+## System Services
+This category of service runs as part of the `ROS` command. It is referenced from the `cloud-config.yml` file, which points to `rancher/index.yml`, which in turn looks under `/[letter]/[service-name].yml`. 
+
+Making changes to system services is slightly more tricky than changing application services. 
+
+0. `SSH` into the server
+1. Delete the files in `/var/lib/rancher/cache`.
+2. run `sudo ros s rm [service-name] && sudo ros s up [service-name]`
+
+## Application Services
+Application services are run by `docker-compose`. However, no `docker-compose.yaml` file is present in this repo. Instead, each service is defined in `docker-compose` compatible yaml in the `/compose` folder. Each service in it's own file, with the file name indicating both the service and container name. As such, you should refrain from defining a `container_name`.
+
+Making changes to Application services is very straight forward. Simply edit, add or delete files to the `/compose` directory, and push. The home server will automatically pull changes to the master branch and apply them.
 
 # Adding new services
 [...]
