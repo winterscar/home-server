@@ -14,4 +14,4 @@ with open('/config/changes.txt', 'r') as changes:
       os.popen(f'docker-compose -f /config/compose/docker-compose.yaml \
        up -d --remove-orphans {service}')
     elif path.split('/')[0] in containers:
-      os.popen(f'docker restart {container}')
+      os.popen(f'docker restart {path.split('/')[0]}')
