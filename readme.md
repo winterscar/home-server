@@ -28,6 +28,10 @@ Starting from a blank slate, the following steps will bring you back up to a ful
     ```
     > You will need to provide a one-token.json file. You can get one from [here](https://duplicacy.com/one_start).
 
+4. Finally, run  the following to start all the services
+    ```bash
+    docker run --rm docker/compose up -d /mnt/config/compose/docker-compose.yaml
+    ```
 
 # Adding new services
 [...]

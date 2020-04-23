@@ -1,6 +1,2 @@
 services:
-  - update-config
-  - home-assistant
   - mergerfs
-  - traefik
-  - backup
