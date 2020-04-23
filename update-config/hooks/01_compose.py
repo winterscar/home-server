@@ -9,8 +9,9 @@ class Loader(yaml.SafeLoader):
       super(Loader, self).__init__(stream)
     def services(self, node):
       data = {}
+      ignore = [self._file, 'docker-compose.yaml']
       for service in os.listdir(self._root):
-        if service.endswith('.yaml') and service != self._file:
+        if service.endswith('.yaml') and not (service in ignore):
           servicefile = os.path.join(self._root, service)
           servicename = os.path.splitext(service)[0]
           with open(servicefile, 'r') as s:
