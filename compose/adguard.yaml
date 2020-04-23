@@ -3,6 +3,7 @@ volumes:
   - /mnt/config/adguard/conf:/opt/adguardhome/conf
   - /mnt/config/adguard/work:/opt/adguardhome/work
   - /etc/localtime:/etc/localtime:ro
+ports:
   - '53:53/tcp'
   - '53:53/udp'
   - '67:67/udp'
@@ -11,5 +12,6 @@ volumes:
   - '80:80/tcp'
   - '443:443/tcp'
   - '853:853/tcp'
+  - '3000:3000/tcp'
   - "8090:8090"
 image: adguard/adguardhome 
