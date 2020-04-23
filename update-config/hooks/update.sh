@@ -1,4 +1,5 @@
 #!/bin/bash
 
 cd /config
-git pull && docker restart $(docker ps -q)
+git pull
+rm -rf /config-cache/*
