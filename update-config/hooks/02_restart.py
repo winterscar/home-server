@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import os
 
-with open('changes.txt', 'r') as changes:
+with open('/config/changes.txt', 'r') as changes:
   # Get running containers
   containers = []
   for container in os.popen("docker ps --format '{{.Names}}'").readlines():
