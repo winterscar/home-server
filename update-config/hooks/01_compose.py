@@ -16,7 +16,7 @@ class Loader(yaml.SafeLoader):
           servicename = os.path.splitext(service)[0]
           with open(servicefile, 'r') as s:
             data[servicename] = yaml.load(s, Loader)
-            data[servicename]['containter_name'] = servicename
+            data[servicename]['container_name'] = servicename
       return data
 
 Loader.add_constructor('!services', Loader.services)
