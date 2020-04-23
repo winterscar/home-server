@@ -1,5 +1,4 @@
 restart: unless-stopped
-image: staticfloat/docker-webhook
 volumes:
   - /mnt/config:/config
   - /var/run/docker.sock:/var/run/docker.sock
@@ -12,3 +11,4 @@ expose:
 labels:
   - "traefik.enable=true"
   - "traefik.http.routers.update-config.rule=Host(`update.rancher.pasquet.co`)"
+image: staticfloat/docker-webhook

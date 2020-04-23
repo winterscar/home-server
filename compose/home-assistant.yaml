@@ -1,8 +1,7 @@
 restart: unless-stopped
-image: homeassistant/home-assistant
+network_mode: host
 expose:
   - "8123"
-network_mode: host
   volumes:
   - /mnt/config/home-assistant:/config
   - /etc/localtime:/etc/localtime:ro
@@ -10,3 +9,4 @@ labels:
   - "traefik.enable=true"
   - "traefik.http.routers.home-assistant.rule=Host(`home.rancher.pasquet.co`)"
   - "traefik.http.services.home-assistant.loadbalancer.server.port=8123"
+image: homeassistant/home-assistant
