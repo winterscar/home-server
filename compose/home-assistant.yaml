@@ -2,9 +2,9 @@ restart: unless-stopped
 network_mode: host
 expose:
   - "8123"
-  volumes:
-  - /mnt/config/home-assistant:/config
-  - /etc/localtime:/etc/localtime:ro
+volumes:
+- /mnt/config/home-assistant:/config
+- /etc/localtime:/etc/localtime:ro
 labels:
   - "traefik.enable=true"
   - "traefik.http.routers.home-assistant.rule=Host(`home.rancher.pasquet.co`)"
