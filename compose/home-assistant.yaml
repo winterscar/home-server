@@ -3,7 +3,7 @@ network_mode: host
 expose:
   - "8123"
 volumes:
-- /mnt/config/home-assistant:/config
+- ${CONFIG}/home-assistant:/config
 - /etc/localtime:/etc/localtime:ro
 labels:
   - "traefik.enable=true"

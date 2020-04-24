@@ -1,5 +1,5 @@
 volumes:
-  - '/mnt/config:/data'
+  - '${CONFIG}:/data'
 environment:
   - 'BACKUP_NAME=home-server-backup'
   - 'BACKUP_LOCATION=one://backups/home-server'

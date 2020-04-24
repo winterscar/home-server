@@ -12,6 +12,7 @@ with open('/config/changes.txt', 'r') as changes:
     if path.split('/')[0] == "compose":
       service = os.path.splitext(os.path.basename(path))[0]
       os.popen(f'docker-compose -f /config/compose/docker-compose.yaml \
+      --project-directory=/config/compose \
        up -d --remove-orphans {service}')
     elif path.split('/')[0] in containers:
       container = path.split('/')[0]

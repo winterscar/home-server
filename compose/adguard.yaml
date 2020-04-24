@@ -1,7 +1,7 @@
 restart: unless-stopped
 volumes:
-  - /mnt/config/adguard/conf:/opt/adguardhome/conf
-  - /mnt/config/adguard/work:/opt/adguardhome/work
+  - ${CONFIG}/adguard:/opt/adguardhome/conf
+  - ${STORAGE}/adguard/work:/opt/adguardhome/work
   - /etc/localtime:/etc/localtime:ro
 ports:
   - '53:53/tcp'
@@ -14,4 +14,4 @@ ports:
   - '853:853/tcp'
   - '3000:3000/tcp'
   - "8090:8090"
-image: adguard/adguardhome 
+image: adguard/adguardhome

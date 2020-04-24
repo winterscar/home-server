@@ -22,6 +22,7 @@ Starting from a blank slate, the following steps will bring you back up to a ful
     ```bash
     > docker run -it --rm -v /mnt/config:/data -v one-token.json:/one-token.json \
       --entrypoint=/bin/ash christophetd/duplicacy-autobackup
+    > cd /data
     > duplicacy init home-server-backup one://backups/home-server
     > duplicacity list
     > duplicacity restore -r [DESIRED REVISION (usually latest)]
@@ -30,7 +31,10 @@ Starting from a blank slate, the following steps will bring you back up to a ful
 
 4. Finally, run  the following to start all the services:
     ```bash
-    docker run --rm docker/compose up -d /mnt/config/compose/docker-compose.yaml
+    docker run --rm -v /mnt/config:/config docker/compose \
+      -f /config/compose/docker-compose.yaml \
+      --project-directory=/config/compose \
+      up -d
     ```
 
 # Configuring services
