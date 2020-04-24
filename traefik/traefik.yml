@@ -18,4 +18,4 @@ certificatesResolvers:
       email: mat@lets-encrypt.pasquet.co
       storage: /config/traefik/acme.json
       httpChallenge:
-        entryPoint: https
+        entryPoint: http
