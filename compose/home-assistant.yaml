@@ -8,6 +8,5 @@ volumes:
 labels:
   - "traefik.enable=true"
   - "traefik.http.routers.home-assistant.rule=Host(`home.${DOMAIN}`)"
-  - "traefik.http.services.home-assistant.loadbalancer.server.port=8123"
   - "traefik.http.services.home-assistant.loadbalancer.server.url=http://172.17.0.1:8123"
 image: homeassistant/home-assistant
