@@ -12,16 +12,8 @@ entryPoints:
   https:
     address: ":443"
 
-acme:
-  email: mat@lets-encrypt.pasquet.co
-  storage: acme.json
-  entryPoint: https
-  onHostRule: true
-  httpChallenge:
-    entryPoint: http
-
 certificatesResolvers:
-  myresolver:
+  letsencrypt:
     acme:
       email: mat@lets-encrypt.pasquet.co
       storage: /config/traefik/acme.json
