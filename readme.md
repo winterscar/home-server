@@ -32,6 +32,7 @@ Starting from a blank slate, the following steps will bring you back up to a ful
 4. Finally, run  the following to start all the services:
     ```bash
     docker run --rm -v /mnt/config:/config docker/compose \
+      -v /var/run/docker.sock:/var/run/docker.sock \
       -f /config/compose/docker-compose.yaml \
       --project-directory=/config/compose \
       up -d
