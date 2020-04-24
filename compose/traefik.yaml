@@ -10,3 +10,4 @@ labels:
   - "traefik.http.routers.traefik.rule=Host(`traefik.${DOMAIN}`)"
   - "traefik.http.services.traefik.loadbalancer.server.port=8080"
 image: 'traefik:v2.2'
+restart: unless-stopped
