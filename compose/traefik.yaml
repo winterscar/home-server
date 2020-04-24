@@ -11,3 +11,5 @@ labels:
   - "traefik.http.services.traefik.loadbalancer.server.port=8080"
 image: 'traefik:v2.2'
 restart: unless-stopped
+extra_hosts: 
+  - host.docker.internal:172.17.0.1
