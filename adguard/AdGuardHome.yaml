@@ -1,5 +1,5 @@
 bind_host: 0.0.0.0
-bind_port: 8090
+bind_port: 3000
 users:
 - name: mat
   password: $2a$10$q6NgoLENgp8KjvwrrH3v.eVDQKJjF2V/bQ9BD8c/LPwqilwXsA8Y6
