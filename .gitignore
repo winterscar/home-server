@@ -3,4 +3,8 @@ home-assistant/deps
 home-assistant/tts
 home-assistant/*.log
 home-assistant/*.db
+home-assistant/.HA_VERSION
+home-assistant/.storage/
+compose/docker-compose.yaml
+.duplicacy
 adguard/work
