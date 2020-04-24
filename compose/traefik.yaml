@@ -8,7 +8,8 @@ volumes:
 labels:
   - "traefik.enable=true"
   - "traefik.http.routers.traefik.rule=Host(`traefik.${DOMAIN}`)"
-  - "traefik.http.services.traefik.loadbalancer.server.port=8080"
+  - "traefik.http.routers.traefik.tls=true"
+  - "traefik.http.routers.traefik.tls.certresolver=letsencrypt"
 image: 'traefik:v2.2'
 restart: unless-stopped
 extra_hosts: 

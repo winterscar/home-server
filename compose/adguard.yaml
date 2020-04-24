@@ -10,8 +10,13 @@ ports:
   - '68:68/tcp'
   - '68:68/udp'
   - '8091:80/tcp'
-  - '443:443/tcp'
   - '853:853/tcp'
-  - '3000:3000/tcp'
-  - "8090:8090"
+expose:
+  - '3000'
+labels:
+  - "traefik.enable=true"
+  - "traefik.http.routers.adguard.rule=Host(`adguard.${DOMAIN}`)"
+  - "traefik.http.routers.adguard.tls=true"
+  - "traefik.http.routers.adguard.tls.certresolver=letsencrypt"
+
 image: adguard/adguardhome

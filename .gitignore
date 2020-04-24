@@ -8,3 +8,4 @@ home-assistant/.storage/
 compose/docker-compose.yaml
 .duplicacy
 adguard/work
+/config/traefik/acme.json

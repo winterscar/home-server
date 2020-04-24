@@ -5,3 +5,25 @@ providers:
 # API and dashboard configuration
 api:
   insecure: true
+
+entryPoints:
+  http:
+    address: ":80"
+  https:
+    address: ":443"
+
+acme:
+  email: mat@lets-encrypt.pasquet.co
+  storage: acme.json
+  entryPoint: https
+  onHostRule: true
+  httpChallenge:
+    entryPoint: http
+
+certificatesResolvers:
+  myresolver:
+    acme:
+      email: mat@lets-encrypt.pasquet.co
+      storage: /config/traefik/acme.json
+      httpChallenge:
+        entryPoint: https
