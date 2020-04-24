@@ -7,6 +7,6 @@ volumes:
 - /etc/localtime:/etc/localtime:ro
 labels:
   - "traefik.enable=true"
-  - "traefik.http.routers.home-assistant.rule=Host(`home.rancher.pasquet.co`)"
+  - "traefik.http.routers.home-assistant.rule=Host(`home.${DOMAIN}`)"
   - "traefik.http.services.home-assistant.loadbalancer.server.port=8123"
 image: homeassistant/home-assistant

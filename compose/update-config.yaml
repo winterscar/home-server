@@ -10,5 +10,5 @@ expose:
   - 8000
 labels:
   - "traefik.enable=true"
-  - "traefik.http.routers.update-config.rule=Host(`update.rancher.pasquet.co`)"
+  - "traefik.http.routers.update-config.rule=Host(`update.${DOMAIN}`)"
 image: staticfloat/docker-webhook

@@ -1,10 +1,12 @@
 ports:
-  - '8080:8080'
   - '80:80'
+expose:
+  - '8080'
 volumes:
   - '${CONFIG}/traefik/traefik.yml:/etc/traefik/traefik.yml'
   - '/var/run/docker.sock:/var/run/docker.sock'
 labels:
   - "traefik.enable=true"
-  - "traefik.http.routers.traefik.rule=Host(`traefik.rancher.pasquet.co`)"
+  - "traefik.http.routers.traefik.rule=Host(`traefik.${DOMAIN}`)"
+  - "traefik.http.services.traefik.loadbalancer.server.port=8080"
 image: 'traefik:v2.2'
