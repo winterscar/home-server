@@ -11,6 +11,10 @@ entryPoints:
     address: ":80"
   https:
     address: ":443"
+    
+defaultEntryPoints:
+  - "http"
+  - "https"
 
 certificatesResolvers:
   letsencrypt:
