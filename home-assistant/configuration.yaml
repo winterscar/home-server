@@ -49,4 +49,4 @@ logger:
 vacuum:
   - platform: xiaomi_miio
     host: 192.168.1.23
-    token: 386e6a476a3948516d5745764a56557a
+    token: !secret roborock_token

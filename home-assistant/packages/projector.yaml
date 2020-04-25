@@ -1,0 +1,51 @@
+binary_sensor:
+  - platform: ping
+    host: 192.168.1.107
+    name: projector_actual_state
+    scan_interval: 30
+
+rest_command:
+  request_projector_shutdown:
+    url: 'http://192.168.1.107:6095/controller?action=keyevent&keycode=power'
+    method: post  
+  request_projector_btn_ok:
+    url: 'http://192.168.1.107:6095/controller?action=keyevent&keycode=enter'
+    method: post
+
+script:
+  projector_shutdown:
+    sequence:
+      - service: rest_command.request_projector_shutdown
+      - delay:
+          seconds: 1
+      - service: rest_command.request_projector_shutdown
+      - delay:
+          seconds: 30
+      - service: switch.turn_off
+        data:
+          entity_id: switch.projector_power
+  projector_startup:
+    sequence:
+    - service: switch.turn_off
+      data:
+        entity_id: switch.projector_power
+    - delay:
+        milliseconds: 1000
+    - service: switch.turn_on
+      data:      
+        entity_id: switch.projector_power
+    - delay:
+        minutes: 1
+    - service: rest_command.request_projector_btn_ok
+
+switch:
+  - platform: template
+    switches:
+      projector:
+        friendly_name: "Living Room Projector"
+        icon_template: "mdi:projector"
+        value_template: "{{ is_state('binary_sensor.projector_actual_state', 'on') }}"
+        turn_on:
+          service: script.projector_startup
+        turn_off:
+          service: script.projector_shutdown

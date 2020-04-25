@@ -1,0 +1,9 @@
+media_player:
+  - platform: onkyo
+    host: 10.10.10.22
+    name: Amplifier
+    max_volume: 75
+    sources:
+      tv: 'Chrome Cast'
+      cd: 'Projector'
+      video2: 'Switch'
