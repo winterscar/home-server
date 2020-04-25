@@ -3,14 +3,50 @@
 default_config:
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
-# http:
-#   base_url: example.duckdns.org:8123
+http:
+  base_url: home.pasquet.co
+
+frontend:
+  themes: !include_dir_merge_named themes
+
+homeassistant:
+  # ### PACKAGES ###############################
+  packages:
+    amplifier: !include packages/amplifier.yaml
+    projector: !include packages/projector.yaml
+  # ############################################
 
 # Text to speech
 tts:
   - platform: google_translate
 
 group: !include groups.yaml
-automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
+
+spotcast:
+  username: !secret spotify_username
+  password: !secret spotify_password
+
+
+automation:
+  - alias: 'Set theme at startup'
+    trigger:
+     - platform: homeassistant
+       event: start
+    action:
+      service: frontend.set_theme
+      data:
+        name: synthwave
+logger:
+  default: info
+  logs:
+    custome_components.onkyo: debug
+    pyeiscp.protocol: debug
+    pyeiscp.connection: debug  
+
+
+vacuum:
+  - platform: xiaomi_miio
+    host: 192.168.1.23
+    token: 386e6a476a3948516d5745764a56557a

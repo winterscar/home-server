@@ -1,10 +1,15 @@
 backup/one-token.json
 home-assistant/deps
 home-assistant/tts
+home-assistant/custom_components/
+home-assistant/packages/
+home-assistant/themes/
+home-assistant/www/
 home-assistant/*.log
 home-assistant/*.db
 home-assistant/.HA_VERSION
 home-assistant/.storage/
+home-assistant/secrets.yaml
 compose/docker-compose.yaml
 .duplicacy
 adguard/work
