@@ -30,6 +30,7 @@ spotcast:
 
 recorder:
   purge_keep_days: 1
+  db_url: sqlite:////storage/home-assistant/history
 
 automation:
   - alias: 'Set theme at startup'

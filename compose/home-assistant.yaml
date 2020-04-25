@@ -4,6 +4,7 @@ expose:
   - "8123"
 volumes:
 - ${CONFIG}/home-assistant:/config
+- ${STORAGE}/home-assistant:/storage
 - /etc/localtime:/etc/localtime:ro
 labels:
   - "traefik.enable=true"
