@@ -1,0 +1,17 @@
+environment:
+  - PUID=${USER_ID}
+  - PGID=${GROUP_ID}
+  - TZ=${TIMEZONE}
+  - BASE_URL=grocy.${DOMAIN}
+volumes:
+  - ${CONFIG}/grocy:/config/data
+expose: 
+  - "80"
+labels:
+  - "traefik.enable=true"
+  - "traefik.http.routers.grocy.rule=Host(`grocy.${DOMAIN}`)"
+  - "traefik.http.services.grocy.loadbalancer.server.port=80"
+  - "traefik.http.routers.grocy.tls=true"
+  - "traefik.http.routers.grocy.tls.certresolver=letsencrypt"
+restart: unless-stopped
+image: linuxserver/grocy

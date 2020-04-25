@@ -10,6 +10,9 @@ home-assistant/.HA_VERSION
 home-assistant/.storage/
 home-assistant/.cloud/
 home-assistant/secrets.yaml
+unifi
+grocy/*
+!grocy/config.php
 compose/docker-compose.yaml
 .duplicacy
 adguard/work

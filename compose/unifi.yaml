@@ -1,0 +1,18 @@
+restart: unless-stopped
+volumes:
+  - ${CONFIG}/unifi:/unifi
+  - /etc/localtime:/etc/localtime:ro
+environment:
+  - UNIFI_GID=${GROUP_ID} 
+  - UNIFI_UID=${USER_ID}
+  - RUNAS_UID0=false
+network_mode: host
+expose:
+  - "8443"
+labels:
+  - "traefik.enable=true"
+  - "traefik.http.routers.unifi.rule=Host(`unifi.${DOMAIN}`)"
+  - "traefik.http.services.unifi.loadbalancer.server.port=8443"
+  - "traefik.http.routers.unifi.tls=true"
+  - "traefik.http.routers.unifi.tls.certresolver=letsencrypt"
+image: jacobalberty/unifi
