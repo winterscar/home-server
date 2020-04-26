@@ -1,0 +1,17 @@
+restart: unless-stopped
+depends_on:
+  - "home-assistant"
+user: root
+volumes:
+  - ${CONFIG}/node-red:/data
+  - ${STORAGE}/node-red:/data/node-modules
+  - /etc/localtime:/etc/localtime:ro
+expose:
+  - "1880"
+image: nodered/node-red-docker
+labels:
+  - "traefik.enable=true"
+  - "traefik.http.routers.node-red.rule=Host(`nodered.${DOMAIN}`)"
+  - "traefik.http.services.node-red.loadbalancer.server.port=1880"
+  - "traefik.http.routers.node-red.tls=true"
+  - "traefik.http.routers.node-red.tls.certresolver=letsencrypt"
