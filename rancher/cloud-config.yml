@@ -12,6 +12,10 @@ mounts:
   - /mnt/raw/2
   - ext4
   - ""
+runcmd:
+  - [ln, -s, /mnt/config, ~/config]
+  - [ln, -s, /mnt/storage, ~/storage]
+  - [ln, -s, /mnt/media, ~/media]
 rancher:
   network:
     dns:
