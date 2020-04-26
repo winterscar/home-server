@@ -6,7 +6,8 @@ expose:
   - "8080"
 volumes:
   - /etc/localtime:/etc/localtime:ro
-  - ${CONFIG}/sabnzbd/config:/config
+  - ${CONFIG}/sabnzbd/admin:/config/admin
+  - ${CONFIG}/sabnzbd/sabnzbd.ini:/config/sabnzbd.ini
   - ${DOWNLOAD_PATH}:/downloads
   - ${INCOMPLETE_DL_PATH}:/incomplete-downloads
 image: linuxserver/sabnzbd
@@ -16,3 +17,4 @@ labels:
   - "traefik.http.services.sabnzbd.loadbalancer.server.port=8080"
   - "traefik.http.routers.sabnzbd.tls=true"
   - "traefik.http.routers.sabnzbd.tls.certresolver=letsencrypt"
+  - "downloader=true"
