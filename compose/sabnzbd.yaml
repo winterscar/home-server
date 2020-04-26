@@ -1,0 +1,18 @@
+restart: unless-stopped
+environment:
+  - PGID=${GROUP_ID}
+  - PUID=${USER_ID}
+expose:
+  - "8080"
+volumes:
+  - /etc/localtime:/etc/localtime:ro
+  - ${CONFIG}/sabnzbd/config:/config
+  - ${DOWNLOAD_PATH}:/downloads
+  - ${INCOMPLETE_DL_PATH}:/incomplete-downloads
+image: linuxserver/sabnzbd
+labels:
+  - "traefik.enable=true"
+  - "traefik.http.routers.sabnzbd.rule=Host(`sab.${DOMAIN}`)"
+  - "traefik.http.services.sabnzbd.loadbalancer.server.port=8080"
+  - "traefik.http.routers.sabnzbd.tls=true"
+  - "traefik.http.routers.sabnzbd.tls.certresolver=letsencrypt"
