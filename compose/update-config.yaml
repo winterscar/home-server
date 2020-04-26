@@ -13,4 +13,4 @@ labels:
   - "traefik.http.routers.update-config.rule=Host(`update.${DOMAIN}`)"
   - "traefik.http.routers.update-config.tls=true"
   - "traefik.http.routers.update-config.tls.certresolver=letsencrypt"
-image: staticfloat/docker-webhook
+image: winterscar/github-webhook
