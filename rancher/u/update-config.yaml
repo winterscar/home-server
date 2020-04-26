@@ -1,0 +1,18 @@
+update-config:
+  container_name: update-config
+  restart: unless-stopped
+  volumes:
+    - ${CONFIG}:/config
+    - /var/run/docker.sock:/var/run/docker.sock
+    - /var/lib/rancher/cache:/config-cache
+  environment:
+    - WEBHOOK_SECRET='this is a test secret'
+    - WEBHOOK_HOOKS_DIR=/config/update-config/hooks      
+  expose:
+    - 8000
+  labels:
+    - "traefik.enable=true"
+    - "traefik.http.routers.update-config.rule=Host(`update.${DOMAIN}`)"
+    - "traefik.http.routers.update-config.tls=true"
+    - "traefik.http.routers.update-config.tls.certresolver=letsencrypt"
+  image: winterscar/github-webhook
