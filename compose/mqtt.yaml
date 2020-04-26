@@ -1,0 +1,10 @@
+restart: unless-stopped
+volumes:
+  - ${CONFIG}/mqtt:/mosquitto/config
+  - ${STORAGE}/mqtt/log:/mosquitto/log
+  - ${STORAGE}/mqtt/data:/mosquitto/data
+  - /etc/localtime:/etc/localtime:ro
+ports:
+  - "1883:1883"
+  - "9001:9001"
+image: eclipse-mosquitto
