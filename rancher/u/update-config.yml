@@ -12,7 +12,7 @@ update-config:
     - 8000
   labels:
     - "traefik.enable=true"
-    - traefik.http.routers.update-config.rule=HostRegexp(`{s:update\\..+}`)
+    - "traefik.http.routers.update-config.rule=HostRegexp(`{s:update\\..+}`)"
     - "traefik.http.routers.update-config.tls=true"
     - "traefik.http.routers.update-config.tls.certresolver=letsencrypt"
   image: winterscar/github-webhook
