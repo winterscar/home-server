@@ -6,7 +6,6 @@ environment:
 expose:
   - "8989"
 volumes:
-  - /etc/localtime:/etc/localtime:ro
   - ${CONFIG}/sonarr/config:/config
   - ${TV_PATH}:/tv
   - ${DOWNLOAD_PATH}:/downloads
