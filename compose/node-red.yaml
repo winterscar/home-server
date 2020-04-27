@@ -4,7 +4,6 @@ depends_on:
 user: root
 volumes:
   - ${CONFIG}/node-red:/data
-  - ${STORAGE}/node-red:/data/node-modules
 expose:
   - "1880"
 image: nodered/node-red-docker
