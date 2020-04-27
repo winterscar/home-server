@@ -16,6 +16,8 @@ node-red
 nzbhydra
 sonarr
 radarr
+tautulli
+ombi
 grocy/*
 !grocy/config.php
 compose/docker-compose.yaml
