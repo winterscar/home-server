@@ -6,6 +6,9 @@ providers:
 api:
   insecure: true
 
+serversTransport:
+  insecureSkipVerify: true
+
 entryPoints:
   http:
     address: ":80"
