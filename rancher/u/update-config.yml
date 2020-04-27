@@ -10,4 +10,5 @@ update-config:
     - WEBHOOK_HOOKS_DIR=/config/update-config/hooks      
   ports:
     - '8000:8000'
+  user: ${USER_ID}
   image: winterscar/github-webhook
