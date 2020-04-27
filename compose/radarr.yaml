@@ -1,0 +1,17 @@
+image: linuxserver/radarr
+restart: unless-stopped
+environment:
+  - PGID=${GROUP_ID}
+  - PUID=${USER_ID}
+expose:
+  - "7878"
+volumes:
+  - ${CONFIG}/radarr:/config
+  - ${DOWNLOAD_PATH}:/downloads
+  - ${MOVIES_PATH}:/movies
+labels:
+  - "traefik.enable=true"
+  - "traefik.http.routers.radarr.rule=Host(`movies.${DOMAIN}`)"
+  - "traefik.http.services.radarr.loadbalancer.server.port=7878"
+  - "traefik.http.routers.radarr.tls=true"
+  - "traefik.http.routers.radarr.tls.certresolver=letsencrypt"
