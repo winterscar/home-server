@@ -4,7 +4,7 @@ environment:
   - PLEX_CLAIM=claim-wJ12UYvvaopGCCm1x7Wf
 network_mode: host
 volumes:
-  - ${CONFIG}/plex:/config
+  - ${STORAGE}/plex:/config
   - ${MOVIES_PATH}:/movies
   - ${TV_PATH}:/tv
   - ${MUSIC_PATH}:/music
