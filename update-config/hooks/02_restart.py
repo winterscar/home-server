@@ -23,5 +23,5 @@ reloads  = {c for r in changes if (c := Path(r).parts[0]) in containers}
 
 if rebuilds:
   check_call(d_compose)
-for container in reloads - rebuilds:
-  check_call(d_restart + [container] - {'update-config'})
+for container in (reloads - rebuilds) - {'update-config'}:
+  check_call(d_restart + [container])
