@@ -1,0 +1,15 @@
+image: linuxserver/hydra2
+restart: unless-stopped
+environment:
+  - PGID=${GROUP_ID}
+  - PUID=${USER_ID}
+expose:
+  - "5076"
+volumes:
+  - ${CONFIG}/nzbhydra/config:/config
+labels:
+  - "traefik.enable=true"
+  - "traefik.http.routers.nzbhydra.rule=Host(`search.${DOMAIN}`)"
+  - "traefik.http.services.nzbhydra.loadbalancer.server.port=5076"
+  - "traefik.http.routers.nzbhydra.tls=true"
+  - "traefik.http.routers.nzbhydra.tls.certresolver=letsencrypt"
