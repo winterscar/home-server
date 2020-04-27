@@ -13,6 +13,9 @@ home-assistant/secrets.yaml
 sabnzbd
 unifi
 node-red
+nzbhydra
+sonarr
+radarr
 grocy/*
 !grocy/config.php
 compose/docker-compose.yaml
