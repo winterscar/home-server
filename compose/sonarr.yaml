@@ -6,7 +6,7 @@ environment:
 expose:
   - "8989"
 volumes:
-  - ${CONFIG}/sonarr/config:/config
+  - ${CONFIG}/sonarr:/config
   - ${TV_PATH}:/tv
   - ${DOWNLOAD_PATH}:/downloads
 labels:
