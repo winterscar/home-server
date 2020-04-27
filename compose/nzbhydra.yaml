@@ -6,7 +6,8 @@ environment:
 expose:
   - "5076"
 volumes:
-  - ${CONFIG}/nzbhydra/config:/config
+  - ${CONFIG}/nzbhydra/nzbhydra.yml:/config/nzbhydra.yml
+  - ${CONFIG}/nzbhydra/database:/config/database
 labels:
   - "traefik.enable=true"
   - "traefik.http.routers.nzbhydra.rule=Host(`search.${DOMAIN}`)"
