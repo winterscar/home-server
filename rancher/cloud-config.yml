@@ -3,6 +3,8 @@ mounts:
   - [LABEL=files0, /mnt/raw/0, ext4, ""]
   - [LABEL=files1, /mnt/raw/1, ext4, ""]
   - [LABEL=files2, /mnt/raw/2, ext4, ""]
+runcmd:
+  - [cp, -f, /mnt/rancher/.profile, /home/rancher/.profile]
 rancher:
   network:
     dns:
