@@ -3,6 +3,7 @@ volumes:
   - ${CONFIG}/mqtt:/mosquitto/config
   - ${STORAGE}/mqtt/log:/mosquitto/log
   - ${STORAGE}/mqtt/data:/mosquitto/data
+user: "${USER_ID}:${GROUP_ID}"
 ports:
   - "1883:1883"
   - "9001:9001"
