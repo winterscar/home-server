@@ -1,0 +1,15 @@
+image: linuxserver/ombi
+restart: unless-stopped
+environment:
+  - PGID=${GROUP_ID}
+  - PUID=${USER_ID}
+expose:
+  - "3579"
+volumes:
+  - ${CONFIG}/ombi:/config
+labels:
+  - "traefik.enable=true"
+  - "traefik.http.routers.ombi.rule=Host(`request.${DOMAIN}`)"
+  - "traefik.http.services.ombi.loadbalancer.server.port=3579"
+  - "traefik.http.routers.ombi.tls=true"
+  - "traefik.http.routers.ombi.tls.certresolver=letsencrypt"
