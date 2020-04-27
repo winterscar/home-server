@@ -1,0 +1,18 @@
+image: linuxserver/sonarr
+restart: unless-stopped
+environment:
+  - PGID=${GROUP_ID}
+  - PUID=${USER_ID}
+expose:
+  - "8989"
+volumes:
+  - /etc/localtime:/etc/localtime:ro
+  - ${CONFIG}/sonarr/config:/config
+  - ${TV_PATH}:/tv
+  - ${DOWNLOAD_PATH}:/downloads
+labels:
+  - "traefik.enable=true"
+  - "traefik.http.routers.sonarr.rule=Host(`tv.${DOMAIN}`)"
+  - "traefik.http.services.sonarr.loadbalancer.server.port=8989"
+  - "traefik.http.routers.sonarr.tls=true"
+  - "traefik.http.routers.sonarr.tls.certresolver=letsencrypt"
