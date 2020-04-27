@@ -1,7 +1,6 @@
 environment:
   - PUID=${USER_ID}
   - PGID=${GROUP_ID}
-  - TZ=${TIMEZONE}
   - BASE_URL=grocy.${DOMAIN}
 volumes:
   - ${CONFIG}/grocy:/config/data

@@ -5,7 +5,6 @@ environment:
 expose:
   - "8080"
 volumes:
-  - /etc/localtime:/etc/localtime:ro
   - ${CONFIG}/sabnzbd/admin:/config/admin
   - ${CONFIG}/sabnzbd/sabnzbd.ini:/config/sabnzbd.ini
   - ${DOWNLOAD_PATH}:/downloads

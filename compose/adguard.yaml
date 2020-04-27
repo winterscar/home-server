@@ -2,7 +2,6 @@ restart: unless-stopped
 volumes:
   - ${CONFIG}/adguard:/opt/adguardhome/conf
   - ${STORAGE}/adguard:/opt/adguardhome/work
-  - /etc/localtime:/etc/localtime:ro
 ports:
   - '53:53/tcp'
   - '53:53/udp'

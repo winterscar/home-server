@@ -17,6 +17,7 @@ class Loader(yaml.SafeLoader):
           with open(servicefile, 'r') as s:
             data[servicename] = yaml.load(s, Loader)
             data[servicename]['container_name'] = servicename
+            data[servicename].setdefault('environment', []).append('${TIMEZONE}')
       return data
 
 Loader.add_constructor('!services', Loader.services)

@@ -5,7 +5,6 @@ expose:
 volumes:
 - ${CONFIG}/home-assistant:/config
 - ${STORAGE}/home-assistant:/storage
-- /etc/localtime:/etc/localtime:ro
 labels:
   - "traefik.enable=true"
   - "traefik.http.routers.home-assistant.rule=Host(`home.${DOMAIN}`)"

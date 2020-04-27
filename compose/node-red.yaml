@@ -5,7 +5,6 @@ user: root
 volumes:
   - ${CONFIG}/node-red:/data
   - ${STORAGE}/node-red:/data/node-modules
-  - /etc/localtime:/etc/localtime:ro
 expose:
   - "1880"
 image: nodered/node-red-docker
