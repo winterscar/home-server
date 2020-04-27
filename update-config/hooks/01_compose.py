@@ -17,7 +17,6 @@ class Loader(yaml.SafeLoader):
           with open(servicefile, 'r') as s:
             data[servicename] = yaml.load(s, Loader)
             data[servicename]['container_name'] = servicename
-            data[servicename]['user'] = '${USER_ID}:${GROUP_ID}'
             data[servicename].setdefault('environment', []).append('${TIMEZONE}')
       return data
 
