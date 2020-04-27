@@ -2,7 +2,7 @@ update-config:
   container_name: update-config
   restart: unless-stopped
   volumes:
-    - /mnt/config:/config
+    - ${CONFIG}:/config
     - /var/run/docker.sock:/var/run/docker.sock
     - /var/lib/rancher/cache:/config-cache
   environment:

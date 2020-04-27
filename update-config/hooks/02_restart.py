@@ -9,7 +9,7 @@ import json
 d_ps = ['docker', 'ps', '--format', '{{.Names}}']
 d_compose = ['docker-compose',
             '-f',  '/config/compose/docker-compose.yaml',
-            '--project-directory=/config/compose',
+            '--project-directory=/config',
             'up', '-d', '--remove-orphans']
 d_restart = ['docker', 'restart']
 
