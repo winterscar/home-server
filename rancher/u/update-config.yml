@@ -2,7 +2,7 @@ update-config:
   container_name: update-config
   restart: unless-stopped
   volumes:
-    - ${CONFIG}:/config
+    - /mnt/config:/config
     - /var/run/docker.sock:/var/run/docker.sock
     - /var/lib/rancher/cache:/config-cache
   environment:
@@ -10,5 +10,5 @@ update-config:
     - WEBHOOK_HOOKS_DIR=/config/update-config/hooks      
   ports:
     - '8000:8000'
-  user: ${USER_ID}
+  user: '1100:1101'
   image: winterscar/github-webhook

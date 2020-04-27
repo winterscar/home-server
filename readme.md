@@ -20,7 +20,8 @@ Starting from a blank slate, the following steps will bring you back up to a ful
 3. Your server will restart, installing Rancher OS to the disk. Once this has happened, ssh into the server and run the following commands to get started:
 
     ```bash
-    > docker run -it --rm -v /mnt/config:/data -v one-token.json:/one-token.json \
+    > docker run -it -u 1100:1101 --rm -v /mnt/config:/data \
+      -v one-token.json:/one-token.json \
       --entrypoint=/bin/ash christophetd/duplicacy-autobackup
     > cd /data
     > duplicacy init home-server-backup one://backups/home-server

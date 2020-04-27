@@ -3,11 +3,6 @@ mounts:
   - [LABEL=files0, /mnt/raw/0, ext4, ""]
   - [LABEL=files1, /mnt/raw/1, ext4, ""]
   - [LABEL=files2, /mnt/raw/2, ext4, ""]
-runcmd:
-  - [ln, -s, /mnt/config, ~/config]
-  - [ln, -s, /mnt/storage, ~/storage]
-  - [ln, -s, /mnt/media, ~/media]
-  - [source, /mnt/config/.env]
 rancher:
   network:
     dns:
