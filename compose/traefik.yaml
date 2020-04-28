@@ -13,6 +13,7 @@ labels:
   - "traefik.http.routers.traefik.tls=true"
   - "traefik.http.routers.traefik.tls.certresolver=letsencrypt"
 image: 'traefik:v2.2'
+user: "${USER_ID}:${GROUP_ID}"
 restart: unless-stopped
 extra_hosts: 
   - host.docker.internal:172.17.0.1

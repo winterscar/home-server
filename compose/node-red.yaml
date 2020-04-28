@@ -1,12 +1,12 @@
 restart: unless-stopped
 depends_on:
   - "home-assistant"
-user: root
+user: "${USER_ID}:${GROUP_ID}"
 volumes:
   - ${CONFIG}/node-red:/data
 expose:
   - "1880"
-image: nodered/node-red-docker
+image: nodered/node-red
 labels:
   - "traefik.enable=true"
   - "traefik.http.routers.node-red.rule=Host(`nodered.${DOMAIN}`)"

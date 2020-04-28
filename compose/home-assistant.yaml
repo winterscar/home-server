@@ -11,4 +11,5 @@ labels:
   - "traefik.http.services.home-assistant.loadbalancer.server.port=8123"
   - "traefik.http.routers.home-assistant.tls=true"
   - "traefik.http.routers.home-assistant.tls.certresolver=letsencrypt"
+user: "${USER_ID}:${GROUP_ID}"
 image: homeassistant/home-assistant

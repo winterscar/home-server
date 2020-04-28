@@ -3,6 +3,7 @@ restart: unless-stopped
 environment:
   - PLEX_CLAIM=claim-wJ12UYvvaopGCCm1x7Wf
 network_mode: host
+user: "${USER_ID}:${GROUP_ID}"
 volumes:
   - ${STORAGE}/plex:/config
   - ${MOVIES_PATH}:/movies
