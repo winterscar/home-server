@@ -5,7 +5,6 @@ environment:
   - PGID=${GROUP_ID}
   - PUID=${USER_ID}
 network_mode: host
-user: "${USER_ID}:${GROUP_ID}"
 volumes:
   - ${STORAGE}/plex:/config
   - ${MOVIES_PATH}:/movies
