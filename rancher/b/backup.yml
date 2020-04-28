@@ -11,3 +11,5 @@ backup:
     - 'DUPLICACY_PRUNE_OPTIONS=-keep 0:360 -keep 30:180 -keep 7:30'
     - 'PRUNE_SCHEDULE=0 0 * * *'
   image: christophetd/duplicacy-autobackup
+  labels:
+    - io.rancher.os.scope=system
