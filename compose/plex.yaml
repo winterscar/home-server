@@ -2,6 +2,8 @@ image: plexinc/pms-docker
 restart: unless-stopped
 environment:
   - PLEX_CLAIM=claim-wJ12UYvvaopGCCm1x7Wf
+  - PGID=${GROUP_ID}
+  - PUID=${USER_ID}
 network_mode: host
 user: "${USER_ID}:${GROUP_ID}"
 volumes:
