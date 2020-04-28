@@ -131,3 +131,7 @@ volumes:
 ```
 _bind-mounting_ volumes means that data written to those directories within the container persists across container recreation. All `lsio` services store their configuration data under `/config`.
 
+## Home Assistant
+[Home Assistant](home-assistant.io) is the central part of my Home Automation stack. It integrates connections from thousands of devices and services and makes them available from one place.
+
+Home assistant is the only container that does not support changing user-role, and as such, the data it writes to the host is owned by `root`.
