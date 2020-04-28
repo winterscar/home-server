@@ -12,9 +12,7 @@ function restart () {
 
 function recreate () {
     sudo rm /var/lib/rancher/cache/*
-    docker stop "$@"
-    ros s rm -f "$@"
-    ros s up "$@"
+    ros s up --force-recreate "$@"
 }
 
 function dps () {
