@@ -1,13 +1,19 @@
 restart: unless-stopped
 volumes:
-  - ${CONFIG}/unifi:/unifi
+  - ${CONFIG}/unifi:/config
 environment:
-  - UNIFI_GID=${GROUP_ID} 
-  - UNIFI_UID=${USER_ID}
-  - RUNAS_UID0=false
+  - PGID=${GROUP_ID} 
+  - PUID=${USER_ID}
 network_mode: host
-expose:
-  - "8443"
+ports:
+  - 3478:3478/udp
+  - 10001:10001/udp
+  - 8080:8080
+  - 8081:8081
+  - 8443:8443
+  - 8843:8843
+  - 8880:8880
+  - 6789:6789
 labels:
   - "traefik.enable=true"
   - "traefik.http.routers.unifi.rule=Host(`unifi.${DOMAIN}`)"
@@ -15,4 +21,4 @@ labels:
   - "traefik.http.services.unifi.loadbalancer.server.scheme=https"
   - "traefik.http.routers.unifi.tls=true"
   - "traefik.http.routers.unifi.tls.certresolver=letsencrypt"
-image: jacobalberty/unifi
+image: linuxserver/unifi-controller

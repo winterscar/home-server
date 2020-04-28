@@ -1,9 +1,10 @@
-image: plexinc/pms-docker
+image: linuxserver/plex
 restart: unless-stopped
 environment:
   - PLEX_CLAIM=claim-wJ12UYvvaopGCCm1x7Wf
   - PGID=${GROUP_ID}
   - PUID=${USER_ID}
+  - VERSION=docker
 network_mode: host
 volumes:
   - ${STORAGE}/plex:/config
