@@ -1,0 +1,13 @@
+backup:
+  container_name: backup
+  restart: unless-stopped
+  volumes:
+    - /mnt/config:/data
+  environment:
+    - 'BACKUP_NAME=home-server-backup'
+    - 'BACKUP_LOCATION=one://backups/home-server'
+    - 'BACKUP_SCHEDULE=0 2 * * *'
+    - 'ONEDRIVE_TOKEN_FILE=/data/backup/one-token.json'
+    - 'DUPLICACY_PRUNE_OPTIONS=-keep 0:360 -keep 30:180 -keep 7:30'
+    - 'PRUNE_SCHEDULE=0 0 * * *'
+  image: christophetd/duplicacy-autobackup

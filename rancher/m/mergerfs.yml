@@ -14,3 +14,5 @@ mergerfs:
     - 'BRANCHES=/source/*'
   image: hotio/mergerfs
   restart: always
+  labels:
+    - io.rancher.os.scope=system

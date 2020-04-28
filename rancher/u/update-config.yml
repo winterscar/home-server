@@ -7,8 +7,11 @@ update-config:
     - /var/lib/rancher/cache:/config-cache
   environment:
     - WEBHOOK_SECRET='this is a test secret'
-    - WEBHOOK_HOOKS_DIR=/config/update-config/hooks      
+    - WEBHOOK_HOOKS_DIR=/config/update-config/hooks
+    - TZ=Europe/London
   ports:
     - '8000:8000'
   user: '1100:1101'
   image: winterscar/github-webhook
+  labels:
+    - io.rancher.os.scope=system
