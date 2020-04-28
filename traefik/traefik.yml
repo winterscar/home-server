@@ -11,14 +11,14 @@ serversTransport:
 
 entryPoints:
   http:
-    address: ":80"
+    address: ":1025"
     http:
       redirections:
         entryPoint:
           to: https
           scheme: https
   https:
-    address: ":443"
+    address: ":1026"
     
 defaultEntryPoints:
   - "http"
