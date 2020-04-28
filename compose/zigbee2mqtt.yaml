@@ -1,0 +1,7 @@
+volumes:
+  - ${CONFIG}/zigbee2mqtt/configuration.yaml:/app/data/configuration.yaml
+devices:
+  - /dev/ttyACM0
+image: koenkk/zigbee2mqtt
+restart: unless-stopped
+user: "${USER_ID}:${GROUP_ID}"
