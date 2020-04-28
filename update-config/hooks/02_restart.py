@@ -16,7 +16,7 @@ d_restart = ['docker', 'restart']
 containers = {c for c in check_output(d_ps, text=True).split('\n')}
 
 payload = json.loads(argv[1])
-changes = [a for v in [f['modified'] + f['added'] for f in payload['commits']] for a in v]
+changes = [a for v in [f['modified'] + f['added'] + f['removed'] for f in payload['commits']] for a in v]
 
 rebuilds = {c.stem for r in changes if (c := Path(r)).parts[0] == 'compose'}
 reloads  = {c for r in changes if (c := Path(r).parts[0]) in containers}
