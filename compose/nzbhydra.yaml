@@ -1,4 +1,4 @@
-image: linuxserver/hydra2
+image: linuxserver/nzbhydra2
 restart: unless-stopped
 environment:
   - PGID=${GROUP_ID}
