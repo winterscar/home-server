@@ -1,0 +1,11 @@
+image: nginx:alpine
+volumes:
+  - ${CONFIG}/landing:/usr/share/nginx/html:ro
+expose:
+  - 80
+labels:
+  - "traefik.enable=true"
+  - "traefik.http.routers.landing.rule=Host(`${DOMAIN}`)"
+  - "traefik.http.services.landing.loadbalancer.server.port=80"
+  - "traefik.http.routers.landing.tls=true"
+  - "traefik.http.routers.landing.tls.certresolver=letsencrypt"
