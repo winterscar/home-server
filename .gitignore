@@ -18,6 +18,7 @@ sonarr
 radarr
 tautulli
 ombi
+traefik/acme.json
 grocy/*
 !grocy/config.php
 compose/docker-compose.yaml
