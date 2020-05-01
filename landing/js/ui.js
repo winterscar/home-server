@@ -33,10 +33,14 @@ const UpdateSearch = async query => {
 
 function HandleEnter() {
 	let query = pv.getText()
-	urlPattern = "^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$"
-	if (query.match(urlPattern) != null){
-		let prefix = (query.match(".+:\/\/.+") == null) ? 'https://' : ''
-		window.location = prefix + query
+  var pattern = new RegExp('^(?<protocol>https?:\\/\\/)?'+ // protocol
+    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
+    '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+    '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+    '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+	if (match = query.match(pattern)){
+		window.location = (match.groups.protocol) ? '' : 'https://' + query
 	} else {
 		window.location = 'https://google.com/search?q=' + query
 	}
