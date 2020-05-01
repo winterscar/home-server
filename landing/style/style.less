@@ -1,7 +1,29 @@
 @import "normalize.css";
 @import "elements";
 @import "config";
-body {background: @0 url('bg.png') cover;}
+body {
+	background-color: @0;
+}
+
+#background {
+	opacity: 0.8;
+	animation: bgFade 1s ease-in 0s 1;
+	position: fixed;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+@keyframes modalFade {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+@keyframes bgFade {
+	0% {opacity: 0;}
+	100% {opacity: 0.8;}
+}
+
 a {
 	color:@7;
 	text-decoration: none;
@@ -24,7 +46,11 @@ input {
 	padding:0;
 }
 #container {
-	background-color:@0;
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	opacity: 1;
+	animation: modalFade 0.25s ease-in 0s 1;
+	background-color:#1a1a1ad1;
 	font-family:@font;
 	font-size: 13px;
 	width: 585px;
@@ -37,6 +63,9 @@ input {
 	float:left;
 	margin: 0 0 0 6px;
 	padding: 0;
+}
+#search #q{
+	background-color: transparent;
 }
 #links {
 	margin: 7px 0px 0px 2px;
