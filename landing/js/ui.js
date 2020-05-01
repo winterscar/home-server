@@ -31,6 +31,17 @@ const UpdateSearch = async query => {
 	pv.o3DropDown();
 }
 
+function HandleEnter() {
+	let query = pv.getText()
+	urlPattern = "^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$"
+	if (query.match(urlPattern) != null){
+		let prefix = (query.match(".+:\/\/.+") == null) ? 'https://' : ''
+		window.location = prefix + query
+	} else {
+		window.location = 'https://google.com/search?q=' + query
+	}
+}
+
 function SetupTabCompletion(){
 	pv = completely(document.getElementById('search'),{
 		backgroundColor:'transparent',
@@ -41,7 +52,7 @@ function SetupTabCompletion(){
 	});
 	pv.input.focus();
 	pv.onChange = UpdateSearch
-	pv.onEnter = () => window.location = 'https://google.com/search?q=' + pv.getText()
+	pv.onEnter = HandleEnter
 }
 
 // postition won't work correctly if you
