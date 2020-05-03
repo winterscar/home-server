@@ -3,6 +3,7 @@ source /mnt/config/.env
 alias ros="sudo ros"
 alias restart="sudo system-docker restart console"
 alias sdocker="sudo system-docker"
+alias runin="docker exec -it"
 
 backup () {
   local OPTIND OPTARG opt

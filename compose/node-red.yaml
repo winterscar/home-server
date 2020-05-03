@@ -4,6 +4,7 @@ depends_on:
 user: "${USER_ID}:${GROUP_ID}"
 volumes:
   - ${CONFIG}/node-red:/data
+  - ${STORAGE}/node-red/.npm:/.npm
 expose:
   - "1880"
 image: nodered/node-red

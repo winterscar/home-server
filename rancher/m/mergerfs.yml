@@ -1,8 +1,8 @@
 mergerfs:
   container_name: mergerfs
   volumes:
-    - '/mnt/raw:/source'
-    - '/mnt/storage:/mountpoint:shared'
+    - /mnt/raw:/source:shared
+    - /mnt/storage:/mountpoint:shared
   security_opt:
     - apparmor:unconfined
   cap_add:
