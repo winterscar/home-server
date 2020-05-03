@@ -6,7 +6,7 @@ mergerfs:
   security_opt:
     - apparmor:unconfined
   cap_add:
-    - CAP_SYS_ADMIN
+    - SYS_ADMIN
   devices:
     - /dev/fuse
   environment:
