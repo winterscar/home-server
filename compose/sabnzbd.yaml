@@ -7,8 +7,8 @@ expose:
 volumes:
   - ${CONFIG}/sabnzbd/admin:/config/admin
   - ${CONFIG}/sabnzbd/sabnzbd.ini:/config/sabnzbd.ini
-  - ${DOWNLOAD_PATH}:/downloads
-  - ${INCOMPLETE_DL_PATH}:/incomplete-downloads
+  - ${DOWNLOAD_PATH}:/downloads:slave
+  - ${INCOMPLETE_DL_PATH}:/incomplete-downloads:slave
 image: linuxserver/sabnzbd
 labels:
   - "traefik.enable=true"

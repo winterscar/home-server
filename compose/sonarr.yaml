@@ -7,8 +7,8 @@ expose:
   - "8989"
 volumes:
   - ${CONFIG}/sonarr:/config
-  - ${TV_PATH}:/tv
-  - ${DOWNLOAD_PATH}:/downloads
+  - ${TV_PATH}:/tv:slave
+  - ${DOWNLOAD_PATH}:/downloads:slave
 labels:
   - "traefik.enable=true"
   - "traefik.http.routers.sonarr.rule=Host(`tv.${DOMAIN}`)"

@@ -7,8 +7,8 @@ expose:
   - "7878"
 volumes:
   - ${CONFIG}/radarr:/config
-  - ${DOWNLOAD_PATH}:/downloads
-  - ${MOVIES_PATH}:/movies
+  - ${DOWNLOAD_PATH}:/downloads:slave
+  - ${MOVIES_PATH}:/movies:slave
 labels:
   - "traefik.enable=true"
   - "traefik.http.routers.radarr.rule=Host(`movies.${DOMAIN}`)"

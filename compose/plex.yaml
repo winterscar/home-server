@@ -7,7 +7,7 @@ environment:
   - VERSION=docker
 network_mode: host
 volumes:
-  - ${STORAGE}/plex:/config
-  - ${MOVIES_PATH}:/movies
-  - ${TV_PATH}:/tv
-  - ${MUSIC_PATH}:/music
+  - ${STORAGE}/plex:/config:slave
+  - ${MOVIES_PATH}:/movies:slave
+  - ${TV_PATH}:/tv:slave
+  - ${MUSIC_PATH}:/music:slave

@@ -1,8 +1,8 @@
 restart: unless-stopped
 volumes:
   - ${CONFIG}/mqtt:/mosquitto/config
-  - ${STORAGE}/mqtt/log:/mosquitto/log
-  - ${STORAGE}/mqtt/data:/mosquitto/data
+  - ${STORAGE}/mqtt/log:/mosquitto/log:slave
+  - ${STORAGE}/mqtt/data:/mosquitto/data:slave
 user: "${USER_ID}:${GROUP_ID}"
 ports:
   - "1883:1883"

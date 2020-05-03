@@ -7,7 +7,7 @@ expose:
   - "8123"
 volumes:
 - ${CONFIG}/home-assistant:/config
-- ${STORAGE}/home-assistant:/storage
+- ${STORAGE}/home-assistant:/storage:slave
 labels:
   - "traefik.enable=true"
   - "traefik.http.routers.home-assistant.rule=Host(`home.${DOMAIN}`)"

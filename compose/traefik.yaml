@@ -4,8 +4,8 @@ ports:
 expose:
   - '8080'
 volumes:
-  - '${CONFIG}/traefik:/etc/traefik'
-  - '/var/run/docker.sock:/var/run/docker.sock'
+  - ${CONFIG}/traefik:/etc/traefik
+  - /var/run/docker.sock:/var/run/docker.sock
 labels:
   - "traefik.enable=true"
   - "traefik.http.routers.traefik.rule=Host(`traefik.${DOMAIN}`)"
