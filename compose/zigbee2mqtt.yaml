@@ -1,5 +1,5 @@
 volumes:
-  - ${CONFIG}/zigbee2mqtt/configuration.yaml:/app/data/configuration.yaml
+  - ${CONFIG}/zigbee2mqtt:/app/data
 devices:
   - /dev/ttyACM0
 image: koenkk/zigbee2mqtt

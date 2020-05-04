@@ -138,3 +138,8 @@ _bind-mounting_ volumes means that data written to those directories within the 
 [Home Assistant](home-assistant.io) is the central part of my Home Automation stack. It integrates connections from thousands of devices and services and makes them available from one place.
 
 Home assistant is the only container that does not support changing user-role, and as such, the data it writes to the host is owned by `root`.
+
+## Zigbee2mqtt
+The drivers for the CC2531 Zigbee device are not included in rancher by default. Therefore, in 
+the cloud-config file, we set `kernel-modules: true`. 
+If this is not sufficient, you can run `rmmod cdc_acm && modprobe cdc_acm` 
