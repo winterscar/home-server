@@ -1,7 +1,7 @@
 volumes:
   - ${CONFIG}/zigbee2mqtt:/app/data
 devices:
-  - /dev/ttyACM0
+  - /dev/usbZigbee
 image: koenkk/zigbee2mqtt
 restart: unless-stopped
 user: "${USER_ID}:${GROUP_ID}"
