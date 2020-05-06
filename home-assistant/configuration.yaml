@@ -15,6 +15,7 @@ homeassistant:
     amplifier: !include packages/amplifier.yaml
     projector: !include packages/projector.yaml
     vacuum:    !include packages/vacuum-cleaner.yaml
+    circadian: !include packages/circadian_lighting.yaml
   # ############################################
 
 # Text to speech
