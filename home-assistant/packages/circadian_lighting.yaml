@@ -1,0 +1,12 @@
+circadian_lighting:
+
+switch:
+  - platform: circadian_lighting
+    lights_ct:
+      - light.bedroom_light
+      - light.bedroom_nanoleaf
+      - light.living_room
+      - light.livingroom_nanoleaf
+      - light.corridor_1
+      - light.corridor_2
+      - light.office_light
