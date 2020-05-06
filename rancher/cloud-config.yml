@@ -5,13 +5,14 @@ mounts:
   - [LABEL=files2, /mnt/raw/2, ext4, ""]
 runcmd:
   - [cp, -f, /mnt/config/rancher/.profile, /home/rancher/.profile]
+  - [sudo, system-docker, exec, udev, udevadm, trigger]
 write_files:
   - path: /etc/udev/rules.d/99-usb-serial.rules
     container: udev
     permissions: "0644"
     owner: root
     content: |
-      SUBSYSTEM=="tty", ATTRS{idVendor}=="0451", ATTRS{idProduct}=="16a8", ATTRS{serial}=="__0X00124B001CD48648", SYMLINK="usbZigbee", OWNER="rancher", mode="0666"
+      SUBSYSTEM=="tty", ATTRS{idVendor}=="0451", ATTRS{idProduct}=="16a8", ATTRS{serial}=="__0X00124B001CD48648", SYMLINK="usbZigbee"
 rancher:
   network:
     interfaces:

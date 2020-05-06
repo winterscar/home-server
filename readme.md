@@ -142,4 +142,7 @@ Home assistant is the only container that does not support changing user-role, a
 ## Zigbee2mqtt
 The drivers for the CC2531 Zigbee device are not included in rancher by default. Therefore, in 
 the cloud-config file, we set `kernel-modules: true`. 
-If this is not sufficient, you can run `rmmod cdc_acm && modprobe cdc_acm` 
+If this is not sufficient, you can run `rmmod cdc_acm && modprobe cdc_acm`
+
+UDEV Rules in the cloud-config will mount the CC2531 as `/dev/usbZigbee`, which is then mounted into
+the container.
