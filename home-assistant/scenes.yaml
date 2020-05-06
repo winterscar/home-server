@@ -8,13 +8,19 @@
     light.livingroom_nanoleaf:
       friendly_name: Living Room Nanoleaf
       state: 'off'
+    light.living_room:
+      friendly_name: Living Room Light
+      state: 'off'
+    light.living_room_table_light:
+      friendly_name: Living Room Table Light
+      state: 'off'
     media_player.amplifier:
       friendly_name: 'Amplifier '
       is_volume_muted: false
       source: Chrome Cast
       state: 'on'
       supported_features: 3980
-      volume_level: 0.6                                                                                        
+      volume_level: 0.6
     switch.projector:
       friendly_name: Living Room Projector
       icon: mdi:projector
