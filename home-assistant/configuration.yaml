@@ -14,6 +14,7 @@ homeassistant:
   packages:
     amplifier: !include packages/amplifier.yaml
     projector: !include packages/projector.yaml
+    vacuum:    !include packages/vacuum-cleaner.yaml
   # ############################################
 
 # Text to speech
@@ -46,12 +47,7 @@ logger:
   logs:
     custome_components.onkyo: debug
     pyeiscp.protocol: debug
-    pyeiscp.connection: debug  
-
-vacuum:
-  - platform: xiaomi_miio
-    host: 192.168.1.23
-    token: !secret roborock_token
+    pyeiscp.connection: debug
 
 mqtt:
   discovery: true

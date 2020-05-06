@@ -1,0 +1,70 @@
+vacuum:
+  - platform: xiaomi_miio
+    host: 192.168.1.23
+    token: !secret roborock_token
+
+script:
+  clean_kitchen:
+    icon: 'mdi:stove'
+    alias: Clean the Kitchen
+    sequence:
+      - service: vacuum.send_command
+        data:
+          command: app_segment_clean
+          entity_id: vacuum.xiaomi_vacuum_cleaner
+          params:
+            - 19
+  clean_living_room:
+    icon: 'mdi:television'
+    alias: Clean the Living Room
+    sequence:
+      - service: vacuum.send_command
+        data:
+          command: app_segment_clean
+          entity_id: vacuum.xiaomi_vacuum_cleaner
+          params:
+            - 18
+  clean_bathroom:
+    icon: 'mdi:paper-roll'
+    alias: Clean the Bathroom
+    sequence:
+      - service: vacuum.send_command
+        data:
+          command: app_segment_clean
+          entity_id: vacuum.xiaomi_vacuum_cleaner
+          params:
+            - 1
+  clean_bedroom:
+    icon: 'mdi:bed-king'
+    alias: Clean the Bedroom
+    sequence:
+      - service: vacuum.send_command
+        data:
+          command: app_segment_clean
+          entity_id: vacuum.xiaomi_vacuum_cleaner
+          params:
+            - 21
+  clean_office:
+    icon: 'mdi:office-building'
+    alias: Clean the Office
+    sequence:
+      - service: vacuum.send_command
+        data:
+          command: app_segment_clean
+          entity_id: vacuum.xiaomi_vacuum_cleaner
+          params:
+            - 17
+  clean_everywhere:
+    icon: 'mdi:floor-plan'
+    alias: Clean Everywhere
+    sequence:
+      - service: vacuum.start
+        data:
+          entity_id: vacuum.xiaomi_vacuum_cleaner
+  return_rocky_to_dock:
+    icon: 'mdi:flash'
+    alias: Return Rocky to the dock
+    sequence:
+      - service: vacuum.return_to_base
+        data:
+          entity_id: vacuum.xiaomi_vacuum_cleaner
