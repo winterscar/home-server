@@ -11,7 +11,7 @@
     light.living_room:
       friendly_name: Living Room Light
       state: 'off'
-    light.living_room_table_light:
+    light.living_room_table:
       friendly_name: Living Room Table Light
       state: 'off'
     media_player.amplifier:
