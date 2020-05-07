@@ -1,0 +1,13 @@
+image: 0rc3/barcodebuddy-docker
+volumes:
+  - ${CONFIG}/barcodebuddy:/config
+user: "${USER_ID}:${GROUP_ID}"
+restart: unless-stopped
+expose:
+  - 80
+labels:
+  - "traefik.enable=true"
+  - "traefik.http.routers.barcodebuddy.rule=Host(`barcodebuddy.${DOMAIN}`)"
+  - "traefik.http.services.barcodebuddy.loadbalancer.server.port=80"
+  - "traefik.http.routers.barcodebuddy.tls=true"
+  - "traefik.http.routers.barcodebuddy.tls.certresolver=letsencrypt"
