@@ -1,7 +1,6 @@
 image: f0rc3/barcodebuddy-docker
 volumes:
   - ${CONFIG}/barcodebuddy:/config
-user: "${USER_ID}:${GROUP_ID}"
 restart: unless-stopped
 expose:
   - 80
