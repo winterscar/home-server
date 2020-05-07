@@ -15,10 +15,12 @@ entryPoints:
     http:
       redirections:
         entryPoint:
-          to: https
+          to: https-external
           scheme: https
   https:
     address: ":1026"
+  https-external:
+    address: ":443"
     
 defaultEntryPoints:
   - "http"
