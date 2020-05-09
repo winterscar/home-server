@@ -1,0 +1,12 @@
+light:
+  - platform: group
+    name: Bedroom Lights
+    entities:
+      - light.bedroom_lights
+      - light.bedroom_nanoleaf
+  - platform: group
+    name: Living Room Lights
+    entities:
+      - light.living_room_lights
+      - light.living_room_table_light
+      - light.living_room_nanoleaf
