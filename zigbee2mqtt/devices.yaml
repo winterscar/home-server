@@ -18,7 +18,6 @@
   friendly_name: 'kitchen_blind'
 '0x001e5e09022a5afa':
   friendly_name: 'projector_power'
-  filtered_attributes: ["power"]
 '0x000d6ffffea20375':
   friendly_name: 'office_blind_controller'
 '0x000d6ffffeaf8376':

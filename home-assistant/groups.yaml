@@ -1,0 +1,11 @@
+bedroom_lights:
+  name: Bedroom Lights
+  entities:
+    - light.bedroom_lights
+    - light.bedroom_nanoleaf
+living_room_lights:
+  name: Living Room Lights
+  entities:
+    - light.living_room_lights
+    - light.living_room_table_light
+    - light.living_room_nanoleaf
