@@ -14,7 +14,5 @@ mqtt:
   # user: my_user
   # password: my_password
 
-# Serial settings
-serial:
-  # Location of CC2531 USB sniffer
-  port: /dev/ttyACM0
+devices: devices.yaml
+groups: groups.yaml
