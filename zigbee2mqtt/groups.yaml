@@ -1,0 +1,5 @@
+'1':
+  friendly_name: corridor_lights
+  devices:
+    - '0x000b57fffe499b06'
+    - '0x000b57fffe9a89d4'

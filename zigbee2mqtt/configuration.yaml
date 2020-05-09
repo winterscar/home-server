@@ -14,5 +14,10 @@ mqtt:
   # user: my_user
   # password: my_password
 
+serial:
+  # Required: location of the adapter (e.g. CC2531).
+  # To autodetect the port, set 'port: null'.
+  port: /dev/usbZigbee
+
 devices: devices.yaml
 groups: groups.yaml
