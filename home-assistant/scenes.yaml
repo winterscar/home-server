@@ -5,7 +5,7 @@
       state: closed
     cover.living_room_curtain:
       state: closed
-    light.livingroom_nanoleaf:
+    light.living_room_nanoleaf:
       friendly_name: Living Room Nanoleaf
       state: 'off'
     light.living_room:
@@ -25,3 +25,11 @@
       friendly_name: Living Room Projector
       icon: mdi:projector
       state: 'on'
+
+- id: 'evening_mode'
+  name: Evening Mode
+  entities:
+    cover.kitchen_blind: closed
+    cover.living_room_curtain: closed
+    cover.office_blind: closed
+    cover.bedroom_curtain: closed
