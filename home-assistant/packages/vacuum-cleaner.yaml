@@ -68,3 +68,11 @@ script:
       - service: vacuum.return_to_base
         data:
           entity_id: vacuum.xiaomi_vacuum_cleaner
+  send_to_bin:
+    icon: 'mdi:trash-can'
+    alias: Send Rocky to the dustbin
+    sequence:
+      - service: vacuum.send_command
+        data:
+          command: app_goto_target
+          params: [23000, 29000] # Grid coordinates of the dustbin
