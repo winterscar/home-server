@@ -75,4 +75,5 @@ script:
       - service: vacuum.send_command
         data:
           command: app_goto_target
+          entity_id: vacuum.xiaomi_vacuum_cleaner
           params: [23000, 29000] # Grid coordinates of the dustbin
