@@ -1,0 +1,13 @@
+user: "${USER_ID}:${GROUP_ID}"
+volumes:
+  - ${CONFIG}/grafana:/var/lib/grafana
+expose: 
+  - "3000"
+labels:
+  - "traefik.enable=true"
+  - "traefik.http.routers.grafana.rule=Host(`grafana.${DOMAIN}`)"
+  - "traefik.http.services.grafana.loadbalancer.server.port=80"
+  - "traefik.http.routers.grafana.tls=true"
+  - "traefik.http.routers.grafana.tls.certresolver=letsencrypt"
+restart: unless-stopped
+image: grafana/grafana
