@@ -10,4 +10,4 @@ switch:
       - light.office_light
     lights_rgb:
       - light.bedroom_nanoleaf
-      - light.livingroom_nanoleaf
+      - light.living_room_nanoleaf

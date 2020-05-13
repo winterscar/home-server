@@ -61,3 +61,6 @@ mqtt:
   will_message:
     topic: 'hass/status'
     payload: 'offline'
+
+influxdb:
+  host: mars
