@@ -1,0 +1,8 @@
+restart: unless-stopped
+volumes:
+  - ${CONFIG}/influxdb:/etc/influxdb/influxdb.conf:ro
+  - ${STORAGE}/influxdb:/var/lib/influxdb:slave
+user: "${USER_ID}:${GROUP_ID}"
+ports:
+  - "8086:8086"
+image: influxdb:alpine
