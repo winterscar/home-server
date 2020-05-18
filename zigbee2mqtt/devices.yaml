@@ -29,4 +29,6 @@
 '0x00124b0014664a21':
   friendly_name: '0x00124b0014664a21'
 '0x00158d0004510b7b':
-  friendly_name: 'kitchen_light_switch'
+  friendly_name: kitchen_light_switch
+'0x00158d00041b4f7f':
+  friendly_name: 'office_light_switch'
