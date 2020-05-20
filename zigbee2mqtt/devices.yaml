@@ -31,4 +31,8 @@
 '0x00158d0004510b7b':
   friendly_name: kitchen_light_switch
 '0x00158d00041b4f7f':
-  friendly_name: 'office_light_switch'
+  friendly_name: office_light_switch
+'0x00158d00049da774':
+  friendly_name: 'post_box_open_sensor'
+'0xd0cf5efffedd9a5c':
+  friendly_name: 'downstairs_repeater'
