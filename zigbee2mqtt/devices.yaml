@@ -1,28 +1,44 @@
 '0x000b57fffe4fc9e9':
-  friendly_name: 'office_light'
+  friendly_name: office_light
 '0xccccccfffebd9220':
-  friendly_name: 'living_room_volume'
+  friendly_name: living_room_volume
 '0x000b57fffe2d6585':
-  friendly_name: 'corridor_motion'
+  friendly_name: corridor_motion
 '0x000b57fffe499b06':
-  friendly_name: 'corridor_light_1'
+  friendly_name: corridor_light_1
 '0x000b57fffe9a89d4':
-  friendly_name: 'corridor_light_2'
+  friendly_name: corridor_light_2
 '0x000d6ffffe8ea7a0':
-  friendly_name: 'office_blind'
+  friendly_name: office_blind
 '0x000d6ffffe1cf39c':
-  friendly_name: 'bedroom_light_switch'
+  friendly_name: bedroom_light_switch
 '0x0017880103894fbc':
-  friendly_name: 'bedroom_light'
+  friendly_name: bedroom_light
 '0x000d6ffffeaa468f':
-  friendly_name: 'kitchen_blind'
+  friendly_name: kitchen_blind
 '0x001e5e09022a5afa':
-  friendly_name: 'projector_power'
+  friendly_name: projector_power
 '0x000d6ffffea20375':
-  friendly_name: 'office_blind_controller'
+  friendly_name: office_blind_controller
 '0x000d6ffffeaf8376':
-  friendly_name: 'living_room_blind_controller'
+  friendly_name: living_room_blind_controller
 '0x000b57fffe2f10f3':
-  friendly_name: 'living_room_light'
+  friendly_name: living_room_light
 '0x000d6ffffe40b173':
-  friendly_name: 'living_room_light_switch'
+  friendly_name: living_room_light_switch
+'0x00124b0014664a21':
+  friendly_name: '0x00124b0014664a21'
+'0x00158d0004510b7b':
+  friendly_name: kitchen_light_switch
+'0x00158d00041b4f7f':
+  friendly_name: office_light_switch
+'0x00158d00049da774':
+  friendly_name: post_box_open_sensor
+'0xd0cf5efffedd9a5c':
+  friendly_name: downstairs_repeater
+'0x00158d000476f272':
+  friendly_name: 'living_room_window_sensor'
+'0x00158d000476f27a':
+  friendly_name: 'front_door_sensor'
+'0x00158d00049da73d':
+  friendly_name: 'kitchen_window_sensor'
