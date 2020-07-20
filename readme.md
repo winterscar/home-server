@@ -41,7 +41,7 @@ Starting from a blank slate, the following steps will bring you back up to a ful
       docker/compose \
       -f /config/compose/docker-compose.yaml \
       --project-directory=/config \
-      up -d
+      up -d --force-recreate
     ```
 
 # Configuring services

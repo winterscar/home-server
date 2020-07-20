@@ -44,7 +44,7 @@ automation:
     action:
       service: frontend.set_theme
       data:
-        name: synthwave
+        name: clear
 logger:
   default: info
   logs:
