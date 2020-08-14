@@ -1,4 +1,5 @@
 
+# -------- Corridor lights -------------------------------------------------------------------------
 - alias: Turn on corridor light when there is movement
   trigger:
     platform: state
@@ -21,6 +22,45 @@
     service: light.turn_off
     entity_id: light.corridor_lights
 
+# --------------------------------------------------------------------------------------------------
+
+- alias: Set motion helper to false at sunrise
+  trigger:
+    platform: sun
+    event: sunrise
+  action:
+    - service: homeassistant.turn_on
+      entity_id: input_boolean.helper_morning_covers_opened
+
+- alias: Open covers in the morning
+  trigger:
+    platform: state
+    entity_id: binary_sensor.corridor_motion_occupancy
+    to: 'on'
+  condition:
+    - condition: state
+      entity_id: input_boolean.helper_morning_covers_opened
+      state: 'off'
+  action:
+    service: cover.open_cover
+    entity_id:
+      - cover.kitchen_blind
+      - cover.bedroom_curtain
+      - cover.living_room_curtain
+      - cover.office_blind
+
+- alias: Stop living room curtain if the door is open
+  trigger:
+    platform: state
+    entity_id: cover.living_room_curtain
+  condition:
+    - condition: state
+      entity_id: binary_sensor.living_room_window_sensor_contact
+      state: 'on'
+  action:
+    service: cover.stop_cover
+    entity_id: cover.living_room_curtain
+
 - alias: 'Set theme at startup'
   trigger:
     - platform: homeassistant
@@ -28,4 +68,4 @@
   action:
     service: frontend.set_theme
     data:
-      name: clear
+      name: clear 
