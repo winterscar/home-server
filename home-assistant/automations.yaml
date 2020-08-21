@@ -42,13 +42,15 @@
       entity_id: input_boolean.helper_morning_covers_opened
       state: 'off'
   action:
-    service: cover.open_cover
-    entity_id:
-      - cover.kitchen_blind
-      - cover.bedroom_curtain
-      - cover.living_room_curtain
-      - cover.office_blind
-
+    - service: cover.open_cover
+      entity_id:
+        - cover.kitchen_blind
+        - cover.bedroom_curtain
+        - cover.living_room_curtain
+        - cover.office_blind
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.helper_morning_covers_opened
+  
 - alias: Stop living room curtain if the door is open
   trigger:
     platform: state
@@ -56,7 +58,7 @@
   condition:
     - condition: state
       entity_id: binary_sensor.living_room_window_sensor_contact
-      state: 'on'
+      state: 'Open'
   action:
     service: cover.stop_cover
     entity_id: cover.living_room_curtain
