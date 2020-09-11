@@ -91,13 +91,13 @@
 
 # ------------ Circadian brightness automation -------------
 
-## Bedroom light
-- alias: Bedroom light Circadian adjustment
-  trigger:
-    platform: numeric_state
-    entity_id: sun.sun
-    value_template: "{{ state_attr('sun.sun', 'elevation') }}"
-  condition:
+# ## Bedroom light
+# - alias: Bedroom light Circadian adjustment
+#   trigger:
+#     platform: numeric_state
+#     entity_id: sun.sun
+#     value_template: "{{ state_attr('sun.sun', 'elevation') }}"
+#   condition:
     
 # Every ten minutes:
 #   for each light:
