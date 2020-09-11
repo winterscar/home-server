@@ -29,7 +29,7 @@
     platform: sun
     event: sunrise
   action:
-    - service: homeassistant.turn_on
+    - service: homeassistant.turn_off
       entity_id: input_boolean.helper_morning_covers_opened
 
 - alias: Open covers in the morning
@@ -88,4 +88,20 @@
       transition: 0.25
       kelvin: "{{ state_attr('sensor.circadian_values', 'colortemp') | int }}"
       brightness_pct: "{{ state_attr('switch.circadian_lighting_circadian_lighting', 'brightness') | int }}"
+
+# ------------ Circadian brightness automation -------------
+
+## Bedroom light
+- alias: Bedroom light Circadian adjustment
+  trigger:
+    platform: numeric_state
+    entity_id: sun.sun
+    value_template: "{{ state_attr('sun.sun', 'elevation') }}"
+  condition:
     
+# Every ten minutes:
+#   for each light:
+#     if light.brightness == circadian.brightness && light.kelvin == circadian.kelvin
+#       set light brightness and kelvin to new circadian value
+# When a light turns on:
+#   Set light brightness and kelvin to circadian value
