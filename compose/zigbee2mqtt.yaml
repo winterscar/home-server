@@ -5,5 +5,3 @@ devices:
 image: koenkk/zigbee2mqtt
 restart: unless-stopped
 user: "${USER_ID}:${GROUP_ID}"
-environment:
-  - DEBUG=zigbee-herdsman*
