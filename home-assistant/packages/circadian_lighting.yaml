@@ -7,7 +7,6 @@ switch:
       - light.living_room
       - light.corridor_1
       - light.corridor_2
-      - light.office_light
     lights_rgb:
       - light.bedroom_nanoleaf
       - light.living_room_nanoleaf
