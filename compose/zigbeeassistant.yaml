@@ -1,9 +1,9 @@
 image: carldebilly/zigbee2mqttassistant
+restart: unless-stopped
 environment:
   - Z2MA_SETTINGS__MQTTSERVER=mqtt
 expose:
   - "80"
-restart: unless-stopped
 labels:
   - "traefik.enable=true"
   - "traefik.http.routers.zigbeeassistant.rule=Host(`zigbee.${DOMAIN}`)"
