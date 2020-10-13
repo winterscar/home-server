@@ -12,7 +12,7 @@ write_files:
     permissions: "0644"
     owner: root
     content: |
-      SUBSYSTEM=="tty", ATTRS{idVendor}=="0451", ATTRS{idProduct}=="16a8", ATTRS{serial}=="__0X00124B001CD48648", SYMLINK="usbZigbee"
+      SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", ATTRS{serial}=="0000:00:1d.0" SYMLINK="usbZigbee"
 rancher:
   network:
     interfaces:
