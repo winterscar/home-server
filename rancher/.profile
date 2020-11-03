@@ -40,7 +40,7 @@ dps () {
   eval "$c ps --format '$f'"
 }
 
-update () {
+docker-update () {
   docker run --rm \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v /mnt/config:/config \
