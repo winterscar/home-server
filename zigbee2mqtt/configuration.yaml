@@ -19,5 +19,9 @@ serial:
   # To autodetect the port, set 'port: null'.
   port: /dev/usbZigbee
 
+advanced:
+  log_level: info
+  pan_id: 0x1a63
+
 devices: devices.yaml
 groups: groups.yaml
