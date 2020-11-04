@@ -15,7 +15,6 @@ homeassistant:
     amplifier:     !include packages/amplifier.yaml
     projector:     !include packages/projector.yaml
     vacuum:        !include packages/vacuum-cleaner.yaml
-    circadian:     !include packages/circadian_lighting.yaml
     zigbee_groups: !include packages/zigbee_groups.yaml
     light_groups:  !include packages/light_groups.yaml
   # ############################################
