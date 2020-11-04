@@ -128,3 +128,37 @@
         sequence:
           service: light.turn_off
           entity_id: light.living_room_lights
+
+- alias: Office Light Switch
+  id: office_light_switch
+  mode: parallel
+  trigger:
+    platform: state
+    entity_id: sensor.office_light_switch_action
+  action:
+    choose:
+      - conditions:
+        - condition: and
+          conditions:
+            - condition: state
+              entity_id: light.office_light
+              state: "off"
+            - condition: state
+              entity_id: sensor.office_light_switch_action
+              state: "toggle"
+        sequence:
+          service: script.turn_on_lights
+          data:
+            entity_id: light.office_light
+      - conditions:
+        - condition: and
+          conditions:
+            - condition: state
+              entity_id: light.office_light
+              state: "on"
+            - condition: state
+              entity_id: sensor.office_light_switch_action
+              state: "toggle"
+        sequence:
+          service: light.turn_off
+          entity_id: light.office_light
