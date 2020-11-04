@@ -97,3 +97,37 @@
         sequence:
           service: light.turn_off
           entity_id: light.bedroom_lights
+
+- alias: Living Room Light Switch
+  id: living_room_light_switch
+  mode: parallel
+  trigger:
+    platform: state
+    entity_id: sensor.living_room_light_switch_action
+  action:
+    choose:
+      - conditions:
+        - condition: and
+          conditions:
+            - condition: state
+              entity_id: light.living_room_lights
+              state: "off"
+            - condition: state
+              entity_id: sensor.living_room_light_switch_action
+              state: "toggle"
+        sequence:
+          service: script.turn_on_lights
+          data:
+            entity_id: light.living_room_lights
+      - conditions:
+        - condition: and
+          conditions:
+            - condition: state
+              entity_id: light.living_room_lights
+              state: "on"
+            - condition: state
+              entity_id: sensor.living_room_light_switch_action
+              state: "toggle"
+        sequence:
+          service: light.turn_off
+          entity_id: light.living_room_lights
