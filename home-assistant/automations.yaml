@@ -145,7 +145,7 @@
               state: "off"
             - condition: state
               entity_id: sensor.office_light_switch_click
-              state: "click"
+              state: "left"
         sequence:
           service: script.turn_on_lights
           data:
@@ -158,7 +158,7 @@
               state: "on"
             - condition: state
               entity_id: sensor.office_light_switch_click
-              state: "click"
+              state: "left"
         sequence:
           service: light.turn_off
           entity_id: light.office_light
