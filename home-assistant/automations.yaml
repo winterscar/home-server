@@ -76,7 +76,7 @@
           conditions:
             - condition: state
               entity_id: light.bedroom_lights
-              state: "on"
+              state: "off"
             - condition: state
               entity_id: sensor.bedroom_light_switch_action
               state: "toggle"
