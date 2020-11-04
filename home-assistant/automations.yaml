@@ -134,7 +134,7 @@
   mode: parallel
   trigger:
     platform: state
-    entity_id: sensor.office_light_switch_action
+    entity_id: sensor.office_light_switch_click
   action:
     choose:
       - conditions:
@@ -144,8 +144,8 @@
               entity_id: light.office_light
               state: "off"
             - condition: state
-              entity_id: sensor.office_light_switch_action
-              state: "toggle"
+              entity_id: sensor.office_light_switch_click
+              state: "click"
         sequence:
           service: script.turn_on_lights
           data:
@@ -157,8 +157,8 @@
               entity_id: light.office_light
               state: "on"
             - condition: state
-              entity_id: sensor.office_light_switch_action
-              state: "toggle"
+              entity_id: sensor.office_light_switch_click
+              state: "click"
         sequence:
           service: light.turn_off
           entity_id: light.office_light
