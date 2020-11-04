@@ -28,11 +28,6 @@ script: !include scripts.yaml
 scene: !include scenes.yaml
 automation: !include automations.yaml
 
-spotcast:
-  username: !secret spotify_username
-  password: !secret spotify_password
-
-
 recorder:
   purge_keep_days: 1
   db_url: sqlite:////storage/history
