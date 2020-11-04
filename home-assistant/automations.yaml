@@ -8,7 +8,7 @@
   action:
     service: script.turn_on_lights
     data:
-      entity_id: light.bedroom_lights
+      entity_id: light.corridor_lights
 
 - alias: Turn off corridor light after movement
   trigger:
