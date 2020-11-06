@@ -133,9 +133,9 @@
   id: office_light_switch
   mode: parallel
   trigger:
-    platform: state
-    entity_id: sensor.office_light_switch_action
-    to: "single_left"
+    platform: mqtt
+    topic: zigbee2mqtt/office_light_switch/click
+    payload: "left"
   action:
     choose:
       - conditions:
