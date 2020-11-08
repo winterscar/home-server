@@ -15,6 +15,7 @@
     platform: state
     entity_id: binary_sensor.corridor_motion_occupancy
     to: 'off'
+  condition: "{{ state_attr('binary_sensor.server_room_door', 'contact') }}"
   action:
     service: light.turn_off
     entity_id: light.corridor_lights
