@@ -8,8 +8,6 @@
   friendly_name: corridor_light_2
 '0x000d6ffffe1cf39c':
   friendly_name: bedroom_light_switch
-'0x0017880103894fbc':
-  friendly_name: bedroom_light
 '0x000d6ffffeaa468f':
   friendly_name: kitchen_blind
 '0x001e5e09022a5afa':
@@ -23,7 +21,7 @@
 '0x000d6ffffe40b173':
   friendly_name: living_room_light_switch
 '0x00124b0014664a21':
-  friendly_name: '0x00124b0014664a21'
+  friendly_name: bedroom_motion
 '0x00158d0004510b7b':
   friendly_name: kitchen_light_switch
 '0x00158d00041b4f7f':
@@ -38,21 +36,13 @@
   friendly_name: front_door_sensor
 '0x00158d00049da73d':
   friendly_name: kitchen_window_sensor
-'0x00158d00049da6f5':
-  friendly_name: '0x00158d00049da6f5'
 '0x000d6ffffec2409f':
   friendly_name: bedroom_fan_power
 '0x000d6ffffe8ea7a0':
-  friendly_name: '0x000d6ffffe8ea7a0'
-'0x0ca2f400004140af':
-  friendly_name: '0x0ca2f400004140af'
-'0x441102000013a0de':
-  friendly_name: '0x441102000013a0de'
-'0x00158d00047d6523':
-  friendly_name: '0x00158d00047d6523'
-'0x00158d00049da7e1':
-  friendly_name: '0x00158d00049da7e1'
-'0x000b57fffe4fc9e9':
-  friendly_name: '0x000b57fffe4fc9e9'
+  friendly_name: office_blind
 '0x588e81fffe342fa9':
-  friendly_name: 'office_light'
+  friendly_name: office_light
+'0x0017880103894fbc':
+  friendly_name: bedroom_light
+'0x00158d00049da6f5':
+  friendly_name: server_room_door_sensor
