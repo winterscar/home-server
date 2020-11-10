@@ -1,6 +1,7 @@
 turn_on_lights:
   alias: Turn on lights with Adaptive Lighting
   icon: mdi:lamp
+  mode: parallel
   fields:
     entity_id:
       description: entity_id of light
