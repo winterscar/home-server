@@ -1,0 +1,27 @@
+switch:
+  - platform: template
+    switches:
+      my_computer:
+        friendly_name: "Mat's PC"
+        value_template: "{{ is_state('binary_sensor.earth_power_status', 'on') }}"
+        turn_on:
+          service: script.mat_pc_wake
+        turn_off:
+          service: script.mat_pc_shutdown
+        icon_template: mdi:laptop
+
+script:
+  mat_pc_wake:
+    # To enable see https://www.home-assistant.io/components/wake_on_lan/
+    alias: "Mat's PC - Wake"
+    sequence:
+      - service: wake_on_lan.send_magic_packet
+        data:
+          mac: "‎40:8D:5C:51:90:8D"
+  mat_pc_shutdown:
+    alias: "Mat's PC - Shutdown"
+    sequence:
+      - service: mqtt.publish
+        data:
+          topic: "iotlink/workgroup/my-computer/commands/shutdown"
+          payload: ""

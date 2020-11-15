@@ -17,6 +17,7 @@ homeassistant:
     vacuum:        !include packages/vacuum-cleaner.yaml
     zigbee_groups: !include packages/zigbee_groups.yaml
     light_groups:  !include packages/light_groups.yaml
+    mat_pd:        !include packages/mat_pc.yaml
   # ############################################
 
 # Text to speech
@@ -33,17 +34,6 @@ recorder:
   db_url: sqlite:////storage/history
 
 wake_on_lan:
-
-switch:
-  - platform: wake_on_lan
-    mac: "‎40:8D:5C:51:90:8D"
-    name: Turn on Mat's PC
-    host: earth
-    turn_off:
-      service: mqtt.publish
-      data:
-        topic: "iotlink/workgroup/earth/commands/shutdown"
-        payload: ""
 
 
 logger:
