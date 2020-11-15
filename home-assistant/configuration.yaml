@@ -36,7 +36,7 @@ wake_on_lan:
 
 switch:
   - platform: wake_on_lan
-    mac: ‎40:8D:5C:51:90:8D
+    mac: "‎40:8D:5C:51:90:8D"
     name: Turn on Mat's PC
     host: earth
     turn_off:
