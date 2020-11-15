@@ -32,6 +32,20 @@ recorder:
   purge_keep_days: 1
   db_url: sqlite:////storage/history
 
+wake_on_lan:
+
+switch:
+  - platform: wake_on_lan
+    mac: ‎40:8D:5C:51:90:8D
+    name: Turn on Mat's PC
+    host: earth
+    turn_off:
+      service: mqtt.publish
+      data:
+        topic: "iotlink/workgroup/earth/commands/shutdown"
+        payload: ""
+
+
 logger:
   default: info
   logs:
