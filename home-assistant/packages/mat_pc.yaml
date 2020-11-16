@@ -34,5 +34,5 @@ script:
     sequence:
       - service: mqtt.publish
         data:
-          topic: "iotlink/workgroup/my-computer/commands/shutdown"
+          topic: "iotlink/workgroup/earth/commands/shutdown"
           payload: ""
