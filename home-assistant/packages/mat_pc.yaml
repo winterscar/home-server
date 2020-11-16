@@ -1,6 +1,6 @@
 binary_sensor:
   - platform: mqtt
-    name: "Mat's PC - Power"
+    name: "mats_pc_power"
     state_topic: "iotlink/workgroup/earth/lwt"
     value_template: "{{ value }}"
     payload_on: "ON"
