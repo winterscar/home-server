@@ -1,9 +1,20 @@
+binary_sensor:
+  - platform: mqtt
+    name: "Mat's PC - Power"
+    state_topic: "iotlink/workgroup/earth/lwt"
+    value_template: "{{ value }}"
+    payload_on: "ON"
+    payload_off: "OFF"
+    device_class: "connectivity"
+    qos: 1
+
+
 switch:
   - platform: template
     switches:
-      my_computer:
+      mats_pc:
         friendly_name: "Mat's PC"
-        value_template: "{{ is_state('binary_sensor.earth_power_status', 'on') }}"
+        value_template: "{{ is_state('binary_sensor.mats_pc_power', 'on') }}"
         turn_on:
           service: script.mat_pc_wake
         turn_off:
