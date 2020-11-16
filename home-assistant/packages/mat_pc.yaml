@@ -17,7 +17,7 @@ script:
     sequence:
       - service: wake_on_lan.send_magic_packet
         data:
-          mac: "‎40:8D:5C:51:90:8D"
+          mac: "‎40:8d:5c:51:90:8d"
   mat_pc_shutdown:
     alias: "Mat's PC - Shutdown"
     sequence:

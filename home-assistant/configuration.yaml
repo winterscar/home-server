@@ -17,7 +17,7 @@ homeassistant:
     vacuum:        !include packages/vacuum-cleaner.yaml
     zigbee_groups: !include packages/zigbee_groups.yaml
     light_groups:  !include packages/light_groups.yaml
-    mat_pd:        !include packages/mat_pc.yaml
+    mat_pc:        !include packages/mat_pc.yaml
   # ############################################
 
 # Text to speech
