@@ -56,6 +56,6 @@ automation:
     trigger:
       platform: state
       entity_id: binary_sensor.buzzer
-      to: on
+      to: 'on'
     action:
       service: script.turn_on_lights
