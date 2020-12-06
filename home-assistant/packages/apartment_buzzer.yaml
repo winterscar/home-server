@@ -61,4 +61,4 @@ automation:
     action:
       - service: script.someone_at_building_door
       - delay:
-        seconds: 10
+          seconds: 10
