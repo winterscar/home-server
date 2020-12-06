@@ -11,7 +11,7 @@
 '0x000d6ffffeaa468f':
   friendly_name: kitchen_blind
 '0x001e5e09022a5afa':
-  friendly_name: projector_power
+  friendly_name: server_room_power
 '0x000d6ffffea20375':
   friendly_name: office_blind_controller
 '0x000d6ffffeaf8376':
@@ -37,7 +37,7 @@
 '0x00158d00049da73d':
   friendly_name: kitchen_window_sensor
 '0x000d6ffffec2409f':
-  friendly_name: bedroom_fan_power
+  friendly_name: projector_power
 '0x000d6ffffe8ea7a0':
   friendly_name: office_blind
 '0x588e81fffe342fa9':
