@@ -59,4 +59,4 @@ automation:
       entity_id: binary_sensor.buzzer
       to: 'on'
     action:
-      service: script.turn_on_lights
+      service: script.someone_at_building_door
