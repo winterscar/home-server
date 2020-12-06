@@ -18,6 +18,7 @@ homeassistant:
     zigbee_groups: !include packages/zigbee_groups.yaml
     light_groups:  !include packages/light_groups.yaml
     mat_pc:        !include packages/mat_pc.yaml
+    building_door: !include packages/apartment_buzzer.yaml
   # ############################################
 
 # Text to speech
