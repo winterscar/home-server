@@ -20,7 +20,7 @@ script:
         message: "There's someone at the building door. Tap 'Open Door' to let them in."
         data:
           push:
-            category: "open_building_door" # Needs to match the top level identifier you used in the ios configuration
+            category: "open_building_door"
 
 ios:
   push:
