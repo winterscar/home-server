@@ -8,11 +8,12 @@ script:
         media_content_id: 'https://home.pasquet.co/local/sounds/fbi-open-up.mp3'
         media_content_type: audio/mp3
     - service: notify.mobile_app_pixel_4_xl
-      message: "Someone's at the door!"
       data:
-        actions:
-          - action: "open_building_door" # The key you are sending for the event
-            title: "Open door" # The button title
+        message: "Someone's at the door!"
+        data:
+          actions:
+            - action: "open_building_door" # The key you are sending for the event
+              title: "Open door" # The button title
     - service: notify.mobile_app_winter_is_coming
       data:
         title: "Someone's at the door!"
