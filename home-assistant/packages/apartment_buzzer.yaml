@@ -59,4 +59,6 @@ automation:
       entity_id: binary_sensor.buzzer
       to: 'on'
     action:
-      service: script.someone_at_building_door
+      - service: script.someone_at_building_door
+      - delay:
+        seconds: 10
