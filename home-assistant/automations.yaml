@@ -163,29 +163,42 @@
           data:
             entity_id: media_player.living_room_tv
 
-      
 
 - alias: Office Light Switch
   id: office_light_switch
   mode: parallel
   trigger:
     platform: mqtt
-    topic: zigbee2mqtt/office_light_switch/click
-    payload: "left"
+    topic: zigbee2mqtt/office_light_switch/action
   action:
     choose:
       - conditions:
-        - condition: state
-          entity_id: light.office_light
-          state: "off"
+        - condition: and
+          conditions:
+            - condition: template
+              value_template: "{{ trigger.payload == 'single_left' }}"
+            - condition: state
+              entity_id: light.office_light
+              state: "off"
         sequence:
           service: script.turn_on_lights
           data:
             entity_id: light.office_light
       - conditions:
-        - condition: state
-          entity_id: light.office_light
-          state: "on"
+        - condition: and
+          conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'single_left' }}"
+          - condition: state
+            entity_id: light.office_light
+            state: "on"
         sequence:
           service: light.turn_off
           entity_id: light.office_light
+      - conditions:
+        - condition: template
+          value_template: "{{ trigger.payload == 'single_right' }}"
+        sequence:
+          service: switch.toggle
+          data:
+            entity_id: switch.mats_pc
