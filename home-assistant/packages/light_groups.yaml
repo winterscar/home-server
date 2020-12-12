@@ -10,3 +10,4 @@ light:
       - light.living_room_light
       - light.living_room_table_light
       - light.living_room_nanoleaf
+      - switch.misc_power_switch
