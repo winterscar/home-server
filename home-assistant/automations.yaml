@@ -67,7 +67,7 @@
   mode: parallel
   trigger:
     platform: mqtt
-    topic: zigbee2mqtt/bedroom_light_switch
+    topic: zigbee2mqtt/bedroom_light_switch/action
   action:
     choose:
       - conditions:
@@ -77,7 +77,7 @@
               entity_id: light.bedroom_lights
               state: "off"
             - condition: template
-              value_template: '{{ "toggle" == trigger.payload_json.action }}'
+              value_template: '{{ "toggle" == trigger.payload }}'
         sequence:
           service: script.turn_on_lights
           data:
@@ -89,7 +89,7 @@
               entity_id: light.bedroom_lights
               state: "on"
             - condition: template
-              value_template: '{{ "toggle" == trigger.payload_json.action }}'
+              value_template: '{{ "toggle" == trigger.payload }}'
         sequence:
           service: light.turn_off
           entity_id: light.bedroom_lights
@@ -98,8 +98,8 @@
   id: living_room_light_switch
   mode: parallel
   trigger:
-    platform: state
-    entity_id: sensor.living_room_light_switch_action
+    platform: mqtt
+    topic: zigbee2mqtt/living_room_light_switch/action
   action:
     choose:
       - conditions:
@@ -108,9 +108,8 @@
             - condition: state
               entity_id: light.living_room_lights
               state: "off"
-            - condition: state
-              entity_id: sensor.living_room_light_switch_action
-              state: "toggle"
+            - condition: template
+              value_template: '{{trigger.payload == "toggle"}}'
         sequence:
           service: script.turn_on_lights
           data:
@@ -121,12 +120,50 @@
             - condition: state
               entity_id: light.living_room_lights
               state: "on"
-            - condition: state
-              entity_id: sensor.living_room_light_switch_action
-              state: "toggle"
+            - condition: template
+              value_template: '{{trigger.payload == "toggle"}}'
         sequence:
           service: light.turn_off
           entity_id: light.living_room_lights
+
+- alias: Living Room volume controller
+  id: living_room_volume_controller
+  mode: queued
+  trigger:
+    platform: mqtt
+    topic: zigbee2mqtt/living_room_volume/action
+  action:
+    choose:
+      - conditions:
+        - condition: template
+          value_template: "{{ trigger.payload == 'rotate_left' }}"
+        sequence:
+          service: media_player.volume_down
+          data:
+            entity_id: media_player.amplifier
+      - conditions:
+        - condition: template
+          value_template: "{{ trigger.payload == 'rotate_right' }}"
+        sequence:
+          service: media_player.volume_up
+          data:
+            entity_id: media_player.amplifier
+      - conditions:
+        - condition: template
+          value_template: "{{ trigger.payload == 'play_pause' }}"
+        sequence:
+          service: media_player.media_play_pause
+          data:
+            entity_id: media_player.living_room_tv
+      - conditions:
+        - condition: template
+          value_template: "{{ trigger.payload == 'skip_forward' }}"
+        sequence:
+          service: media_player.media_play_pause
+          data:
+            entity_id: media_player.living_room_tv
+
+      
 
 - alias: Office Light Switch
   id: office_light_switch
