@@ -4,8 +4,12 @@ script:
     sequence:
     - service: media_player.play_media
       data:
-        entity_id: media_player.kitchen_speaker
-        media_content_id: 'https://home.pasquet.co/local/sounds/fbi-open-up.mp3'
+        entity_id:
+          - media_player.kitchen_speaker
+          - media_player.office_speaker
+          - media_player.bedroom_mini
+          - media_player.living_room_speaker
+        media_content_id: 'https://home.pasquet.co/local/sounds/chime.mp3'
         media_content_type: audio/mp3
     - service: notify.mobile_app_pixel_4_xl
       data:
@@ -61,4 +65,4 @@ automation:
     action:
       - service: script.someone_at_building_door
       - delay:
-          seconds: 10
+          seconds: 25
