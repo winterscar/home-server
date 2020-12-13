@@ -22,6 +22,33 @@
 
 # --------------------------------------------------------------------------------------------------
 
+# -------- Corridor lights -------------------------------------------------------------------------
+- alias: Turn on kitchen lights when there is movement
+  id: kitchen_light_sensor
+  trigger:
+    platform: mqtt
+    topic: zigbee2mqtt/kitchen_motion_sensor
+  action:
+    choose:
+    - conditions:
+      - condition: template
+        value_template: "{{ trigger.payload_json.occupancy == true }}"
+      sequence:
+        service: switch.turn_on
+        entity_id: 
+          - switch.kitchen_lights
+          - switch.kitchen_underlighting
+    - conditions:
+      - condition: template
+        value_template: "{{ trigger.payload_json.occupancy == false}}"
+      sequence:
+        service: switch.turn_off
+        entity_id: 
+          - switch.kitchen_lights
+          - switch.kitchen_underlighting
+
+# --------------------------------------------------------------------------------------------------
+
 - alias: Set motion helper to false at sunrise
   trigger:
     platform: sun
