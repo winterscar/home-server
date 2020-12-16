@@ -26,6 +26,11 @@ script:
           push:
             category: "open_building_door"
 
+input_boolean:
+  buzzer_armed:
+    name: Open buzzer on next press
+    icon: mdi:bell-plus
+
 ios:
   push:
     categories:
@@ -63,6 +68,31 @@ automation:
       entity_id: binary_sensor.buzzer
       to: 'on'
     action:
-      - service: script.someone_at_building_door
+      - choose:
+        - conditions:
+            - condition: state
+              entity_id: input_boolean.buzzer_armed
+              state: 'on'
+          sequence:
+            - service: input_boolean.turn_off
+              entity_id: input_boolean.buzzer_armed
+            - service: switch.turn_on
+              entity_id: switch.building_access
+        default:
+          - service: script.someone_at_building_door
+          - delay:
+              seconds: 25
+  - id: arm_buzzer_when_we_arrive_home
+    alias: Arm the buzzer when we arrive home
+    trigger:
+      - platform: state
+        entity_id: person.mathieu_pasquet
+        to:  'home'
+      - platform: state
+        entity_id: person.jessie_scotson
+        to:  'home'
+    action:
+      - service: input_boolean.turn_on
+        entity_id: input_boolean.buzzer_armed
       - delay:
-          seconds: 25
+          minutes: 2
