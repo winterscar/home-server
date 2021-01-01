@@ -5,3 +5,9 @@ expose:
 volumes:
     - ${CONFIG}/mopidy/fifo:/tmp/snapcast/
     - ${CONFIG}/mopidy:/mopidy
+labels:
+  - "traefik.enable=true"
+  - "traefik.http.routers.mopidyiris.rule=Host(`music.${DOMAIN}`)"
+  - "traefik.http.services.mopidyiris.loadbalancer.server.port=6680"
+  - "traefik.http.routers.mopidyiris.tls=true"
+  - "traefik.http.routers.mopidyiris.tls.certresolver=letsencrypt"
