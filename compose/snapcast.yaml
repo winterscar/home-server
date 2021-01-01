@@ -5,3 +5,6 @@ ports:
     - "1780:1780"
 volumes:
   - ${CONFIG}/mopidy/fifo:/tmp/snapcast/
+environment:
+  - PGID=${GROUP_ID}
+  - PUID=${USER_ID}
