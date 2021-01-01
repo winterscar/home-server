@@ -1,7 +1,7 @@
 image: "ivdata/mopidy"
-expose:
-    - "6680"
-    - "6600"
+ports:
+    - "6680:6680"
+    - "6600:6600"
 volumes:
     - ${CONFIG}/mopidy/fifo:/tmp/snapcast/
     - ${CONFIG}/mopidy:/mopidy
