@@ -1,0 +1,14 @@
+image: "ivdata/mopidy"
+ports:
+    - "6680:6680"
+    - "6602:6600"
+volumes:
+    - ${CONFIG}/mopidy/snapcast:/tmp/snapcast/
+    - ${CONFIG}/mopidy/mat:/mopidy
+labels:
+  - "traefik.enable=true"
+  - "traefik.http.routers.mopidy.rule=Host(`music.${DOMAIN}`)"
+  - "traefik.http.services.mopidy.loadbalancer.server.port=6680"
+  - "traefik.http.routers.mopidy.tls=true"
+  - "traefik.http.routers.mopidy.tls.certresolver=letsencrypt"
+  - "traefik.http.middlewares.mopidy-auth.basicauth.users=dj:$$apr1$$bGRF0prP$$Ybyl.dXoVTLQs912gHp89/"

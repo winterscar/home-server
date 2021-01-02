@@ -1,0 +1,6 @@
+image: "ivdata/mopidy"
+ports:
+    - "6600:6600"
+volumes:
+    - ${CONFIG}/mopidy/snapcast:/tmp/snapcast/
+    - ${CONFIG}/mopidy/guest:/mopidy

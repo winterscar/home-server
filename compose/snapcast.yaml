@@ -2,9 +2,9 @@ image: "ivdata/snapserver"
 ports:
     - "1704:1704"
     - "1705:1705"
-    - "1780:1780"
 volumes:
-  - ${CONFIG}/mopidy/fifo:/tmp/snapcast/
+  - ${CONFIG}/mopidy/snapcast/:/tmp/snapcast/
+  - ${CONFIG}/snapcast/snapserver.conf:/etc/snapserver.conf
 environment:
   - PGID=${GROUP_ID}
   - PUID=${USER_ID}
