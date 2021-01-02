@@ -2,6 +2,7 @@ build: /config/mopidy/build
 image: mopidy:latest
 ports:
     - "6601:6600"
+    - "6681:6680"
 volumes:
     - ${CONFIG}/mopidy/snapcast:/tmp/snapcast/
     - ${CONFIG}/mopidy/jessie/mopidy.conf:/root/.config/mopidy/mopidy.conf
