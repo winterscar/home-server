@@ -4,5 +4,5 @@ ports:
     - "6600:6600"
 volumes:
     - ${CONFIG}/mopidy/snapcast:/tmp/snapcast/
-    - ${CONFIG}/mopidy/guest/mopidy.conf:/config/mopidy.conf
+    - ${CONFIG}/mopidy/guest/mopidy.conf:/root/.cache/mopidy/mopidy.conf
 user: "${USER_ID}:${GROUP_ID}"
