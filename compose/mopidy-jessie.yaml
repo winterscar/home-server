@@ -1,4 +1,5 @@
-image: "ivdata/mopidy"
+build: ~/mopidy/build
+image: mopidy:jessie
 ports:
     - "6601:6600"
 volumes:

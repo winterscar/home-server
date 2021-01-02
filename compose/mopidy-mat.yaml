@@ -1,4 +1,5 @@
-image: "ivdata/mopidy"
+build: ~/mopidy/build
+image: mopidy:mat
 ports:
     - "6680:6680"
     - "6602:6600"
