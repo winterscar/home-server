@@ -1,8 +1,7 @@
 build: /config/mopidy/build
-image: mopidy:guest
+image: mopidy:latest
 ports:
     - "6600:6600"
 volumes:
     - ${CONFIG}/mopidy/snapcast:/tmp/snapcast/
     - ${CONFIG}/mopidy/guest/mopidy.conf:/root/.cache/mopidy/mopidy.conf
-user: "${USER_ID}:${GROUP_ID}"

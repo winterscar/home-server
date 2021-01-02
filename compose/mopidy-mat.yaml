@@ -1,12 +1,11 @@
 build: /config/mopidy/build
-image: mopidy:mat
+image: mopidy:latest
 ports:
     - "6680:6680"
     - "6602:6600"
 volumes:
     - ${CONFIG}/mopidy/snapcast:/tmp/snapcast/
     - ${CONFIG}/mopidy/mat/mopidy.conf:/root/.cache/mopidy/mopidy.conf
-user: "${USER_ID}:${GROUP_ID}"
 labels:
   - "traefik.enable=true"
   - "traefik.http.routers.mopidy.rule=Host(`music.${DOMAIN}`)"

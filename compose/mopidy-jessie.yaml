@@ -1,8 +1,7 @@
 build: /config/mopidy/build
-image: mopidy:jessie
+image: mopidy:latest
 ports:
     - "6601:6600"
 volumes:
     - ${CONFIG}/mopidy/snapcast:/tmp/snapcast/
     - ${CONFIG}/mopidy/jessie/mopidy.conf:/root/.cache/mopidy/mopidy.conf
-user: "${USER_ID}:${GROUP_ID}"
