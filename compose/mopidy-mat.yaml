@@ -5,7 +5,8 @@ ports:
     - "6602:6600"
 volumes:
     - ${CONFIG}/mopidy/snapcast:/tmp/snapcast/
-    - ${CONFIG}/mopidy/mat:/mopidy
+    - ${CONFIG}/mopidy/mat/mopidy.conf:/config/mopidy.conf
+user: "${USER_ID}:${GROUP_ID}"
 labels:
   - "traefik.enable=true"
   - "traefik.http.routers.mopidy.rule=Host(`music.${DOMAIN}`)"

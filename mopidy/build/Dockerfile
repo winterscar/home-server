@@ -31,7 +31,7 @@ RUN set -ex \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* ~/.cache
 
-COPY Pipfile Pipfile.lock /
+COPY Pipfile /
 
 RUN set -ex \
  && pipenv install --system --deploy --python=$(which python3)
@@ -42,9 +42,6 @@ RUN set -ex \
 RUN python3 -m pip install Mopidy-MPD
 # Start helper script.
 COPY entrypoint.sh /entrypoint.sh
-
-# Default configuration.
-COPY mopidy.conf /config/mopidy.conf
 
 
 # Allows any user to run mopidy, but runs by default as a randomly generated UID/GID.
