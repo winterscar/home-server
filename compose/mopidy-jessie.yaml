@@ -1,4 +1,4 @@
-build: ~/mopidy/build
+build: /config/mopidy/build
 image: mopidy:jessie
 ports:
     - "6601:6600"

@@ -1,4 +1,4 @@
-build: ~/mopidy/build
+build: /config/mopidy/build
 image: mopidy:mat
 ports:
     - "6680:6680"

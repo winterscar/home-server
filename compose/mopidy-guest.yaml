@@ -1,4 +1,4 @@
-build: ~/mopidy/build
+build: /config/mopidy/build
 image: mopidy:guest
 ports:
     - "6600:6600"
