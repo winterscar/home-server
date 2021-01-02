@@ -95,7 +95,21 @@ This script uses the changes data passed in from the webhook to ascertain which 
 If _configuration data_ has changed, the service probably needs to be restarted. The script will avoid restarting containers that have just been recreated, and also does not restart the `update-config` container, as that would be suicide.
 
 # Services
-This section details all the running services, including their function, useful links, and caveates. 
+This section details all the running services, including their function, useful links, and caveates.
+
+## Mopidy
+Mopidy streams the audio output into the Snapserver's fifo with a filesink as audio output in mopidy.conf:
+```
+[audio]
+#output = autoaudiosink
+output = audioresample ! audioconvert ! audio/x-raw,rate=48000,channels=2,format=S16LE ! wavenc ! filesink location=/tmp/snapcast/snapwhatever
+```
+Please make sure that the snapfifo file is not created by Mopidy, as Mopidy will create a regular file /tmp/snapfifo instead of a fifo. This will cause Snapcast to play from the beginning if you pause Mopidy.
+Solution is to create the fifo manually with mkfifo /tmp/snapfifo or to start the Snapserver before Mopdy is started.
+
+```
+sudo mkfifo mopidy/snapcast/snapguest
+```
 
 ## Linuxserver.io Services
 All the following services are provided by `lsio`, and as such share very similar configurations.
