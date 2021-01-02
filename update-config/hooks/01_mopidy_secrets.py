@@ -23,3 +23,4 @@ for filepath in files:
     configdata = configdata.replace(r"${" + replacement + r"}", str(value))
   with open(filepath, 'w') as config:
     config.write(configdata)
+  print("replaced secrets in " + filepath)
