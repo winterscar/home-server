@@ -43,11 +43,6 @@ ENV TZ=Europe/London
 
 EXPOSE 6600 6680
 
-# Allows any user to run mopidy, but runs by default as a randomly generated UID/GID.
-ENV HOME=/var/lib/mopidy
-RUN set -ex \
- && usermod -G audio,sudo mopidy
-
 USER mopidy
 
 ENTRYPOINT ["mopidy"]
