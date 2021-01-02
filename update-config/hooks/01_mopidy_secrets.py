@@ -7,7 +7,7 @@ files = ["/config/mopidy/mat/mopidy.conf",
          "/config/mopidy/jessie/mopidy.conf",
          "/config/mopidy/guest/mopidy.conf"]
 
-placeholder = re.compile(r"$\{(?P<path>.+?)\}")
+placeholder = re.compile(r"\$\{(?P<path>.+?)\}")
 
 with open("/config/mopidy/secrets.yaml", 'r') as stream:
   secrets = yaml.safe_load(stream)
@@ -19,7 +19,7 @@ for filepath in files:
   for replacement in replacements:
     value = secrets
     for segment in replacement.split('.'):
-      value[segment]
-    configdata.replace(r"${" + replacement + r"}", value)
+      value = value[segment]
+    configdata = configdata.replace(r"${" + replacement + r"}", str(value))
   with open(filepath, 'w') as config:
     config.write(configdata)
