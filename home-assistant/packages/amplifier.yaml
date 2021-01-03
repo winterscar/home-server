@@ -10,7 +10,7 @@ media_player:
       video3: 'Mats PC'
       strm-box: 'Music'
 
-automtion:
+automation:
   - id: switch_source_to_mopidy
     alias: Change sources when mopidy starts playing
     trigger: 
