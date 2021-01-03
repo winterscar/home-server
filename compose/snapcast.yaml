@@ -2,6 +2,7 @@ image: "ivdata/snapserver"
 ports:
     - "1704:1704"
     - "1705:1705"
+    - "1780:1780"
 volumes:
   - ${CONFIG}/mopidy/snapcast/:/tmp/snapcast/
   - ${CONFIG}/snapcast/snapserver.conf:/etc/snapserver.conf
