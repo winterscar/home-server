@@ -25,13 +25,12 @@ automation:
         - condition: template
           value_template: "{{ state_attr('media_player.amplifier', 'source') != 'Music' }}"
         - condition: template
-          value_template: >- 
-            {{  (trigger.entity_id == media_player.media_mat && 
+          value_template: "{{  (trigger.entity_id == media_player.media_mat and 
                  state_attr('media_player.livingroom_speaker', 'source') == 'Mat')
-             || (trigger.entity_id == media_player.media_jessie &&
+             or (trigger.entity_id == media_player.media_jessie and
                  state_attr('media_player.livingroom_speaker', 'source') == 'Jessie')
-             || (trigger.entity_id == media_player.media_guest &&
-                 state_attr('media_player.livingroom_speaker', 'source') == 'Guest') }}
+             or (trigger.entity_id == media_player.media_guest and
+                 state_attr('media_player.livingroom_speaker', 'source') == 'Guest') }}"
     action:
       - service: media_player.turn_on
         data:
