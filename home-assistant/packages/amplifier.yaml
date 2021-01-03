@@ -7,3 +7,52 @@ media_player:
       tv: 'Chrome Cast'
       cd: 'Projector'
       video2: 'Switch'
+      video3: 'Mats PC'
+      strm-box: 'Music'
+
+automtion:
+  - id: switch_source_to_mopidy
+    alias: Change sources when mopidy starts playing
+    trigger: 
+      platform: state
+      entity_id: 
+        - media_player.media_mat
+        - media_player.media_jessie
+        - media_player.media_guest
+      to: "playing"
+    condition:
+      conditions:
+        - condition: template
+          value_template: "{{ state_attr('media_player.amplifier', 'source') != 'Music' }}"
+        - condition: template
+          value_template: >- 
+            {{  (trigger.entity_id == media_player.media_mat && 
+                 state_attr('media_player.livingroom_speaker', 'source') == 'Mat')
+             || (trigger.entity_id == media_player.media_jessie &&
+                 state_attr('media_player.livingroom_speaker', 'source') == 'Jessie')
+             || (trigger.entity_id == media_player.media_guest &&
+                 state_attr('media_player.livingroom_speaker', 'source') == 'Guest') }}
+    action:
+      - service: media_player.turn_on
+        data:
+          entity_id: media_player.amplifier
+      - service: media_player.select_source
+        data:
+          entity_id: media_player.amplifier
+          source: Music
+  - id: switch_source_snapcast
+    alias: Change amplifier source if the livingroom speaker changes source
+    trigger:
+      - platform: state
+        entity_id: media_player.livingroom_speaker
+    condition:
+      - condition: template
+        value_template: "{{ trigger.from_state.attributes.source != trigger.to_state.attributes.source }}"
+    action:
+      - service: media_player.turn_on
+        data:
+          entity_id: media_player.amplifier
+      - service: media_player.select_source
+        data:
+          entity_id: media_player.amplifier
+          source: Music
