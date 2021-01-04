@@ -1,4 +1,4 @@
-turn_on_lights:
+- turn_on_lights:
   alias: Turn on lights with Adaptive Lighting
   icon: mdi:lamp
   mode: parallel
@@ -12,3 +12,31 @@ turn_on_lights:
       entity_id: switch.adaptive_lighting_lights
       lights: "{{ entity_id }}"
       turn_on_lights: true
+- toggle_snapcast_player_from_source:
+  alias: Toggle snapcast player on / off source
+  fields:
+    entity_id:
+      description: entity_id of the player
+      example: media_player.bedroom_speaker
+    source:
+      description: The source the player should be set to
+  sequence:
+    - choose:
+      - conditions:
+          - condition: template
+            value_template: "{{ state_attr(entity_id, 'source') == source }}"
+        sequence:
+          - service: media_player.volume_mute
+            data:
+              entity_id: "{{ entity_id }}"
+              is_volume_muted: true
+      default:
+        sequence:
+          - service: media_player.select_source
+            data:
+              entity_id: "{{ entity_id }}"
+              source: "{{ source }}"
+          - service: media_player.volume_mute
+            data:
+              entity_id: "{{ entity_id }}"
+              is_volume_muted: false
