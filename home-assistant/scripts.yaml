@@ -29,12 +29,11 @@ toggle_snapcast_player_from_source:
               entity_id: "{{ entity_id }}"
               is_volume_muted: true
     default:
-      sequence:
-        - service: media_player.select_source
-          data:
-            entity_id: "{{ entity_id }}"
-            source: "{{ source }}"
-        - service: media_player.volume_mute
-          data:
-            entity_id: "{{ entity_id }}"
-            is_volume_muted: false
+      - service: media_player.select_source
+        data:
+          entity_id: "{{ entity_id }}"
+          source: "{{ source }}"
+      - service: media_player.volume_mute
+        data:
+          entity_id: "{{ entity_id }}"
+          is_volume_muted: false
