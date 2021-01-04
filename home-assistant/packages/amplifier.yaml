@@ -26,6 +26,8 @@ automation:
           - condition: template
             value_template: "{{ state_attr('media_player.amplifier', 'source') != 'Music' }}"
           - condition: template
+            value_template: "{{  not(state_attr('media_player.is_volume_muted')) }}"
+          - condition: template
             value_template: >-
               {{  (trigger.entity_id == 'media_player.media_mat' and 
                     state_attr('media_player.livingroom_speaker', 'source') == 'Mat')
