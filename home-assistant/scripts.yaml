@@ -22,12 +22,22 @@ toggle_snapcast_player_from_source:
       description: The source the player should be set to
   sequence:
     choose:
-      - conditions: "{{ state_attr(entity_id, 'source') == source }}"
+      - conditions: >
+         {{ state_attr(entity_id, 'source') == source and
+            not(state_attr(entity_id, 'is_volume_muted')) }}
         sequence:
           - service: media_player.volume_mute
             data:
               entity_id: "{{ entity_id }}"
               is_volume_muted: true
+      - conditions: >
+          {{ state_attr(entity_id, 'source') == source and
+             state_attr(entity_id, 'is_volume_muted') }}
+        sequence:
+          - service: media_player.volume_mute
+            data:
+              entity_id: "{{ entity_id }}"
+              is_volume_muted: false
     default:
       - service: media_player.select_source
         data:
