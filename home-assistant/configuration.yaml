@@ -79,7 +79,9 @@ light:
     host: 10.10.10.38
     token: 4ETtAAOkyAD57j1ePu4OJ3ICl2OOICQ4
     name: Bedroom Nanoleaf
+    id: bedroom_nanoleaf
   - platform: nanoleaf
     host: 10.10.10.17
     token: ySFGJ4VBb1WbuCJP7mCvNqH2ZABKHg4F
     name: Living Room Nanoleaf
+    id: living_room_nanoleaf
