@@ -190,7 +190,6 @@
           data:
             entity_id: media_player.living_room_tv
 
-
 - alias: Office Light Switch
   id: office_light_switch
   mode: parallel
@@ -229,3 +228,16 @@
           service: switch.toggle
           data:
             entity_id: switch.mats_pc
+
+- id: front_door_light
+  alias: Turn on the corridor lights when the front door opens
+  trigger:
+    platform: mqtt
+    topic: zigbee2mqtt/front_door_sensor
+  condition: >-
+    {{trigger.payload_json.contact == false and
+     state(light.corridor_lights) == off }}
+  action:
+    service: script.turn_on_lights
+    data:
+      entity_id: light.corridor_lights
