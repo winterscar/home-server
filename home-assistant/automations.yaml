@@ -236,7 +236,7 @@
     topic: zigbee2mqtt/front_door_sensor
   condition: >-
     {{trigger.payload_json.contact == false and
-     state(light.corridor_lights) == off }}
+     states('light.corridor_lights') == off }}
   action:
     service: script.turn_on_lights
     data:
