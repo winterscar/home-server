@@ -1,0 +1,10 @@
+image: "mdubb86/cpiped"
+restart: unless-stopped
+volumes:
+  - ${CONFIG}/mopidy/snapcast/:/tmp/snapcast/
+environment:
+  - CARD="HDA Intel PCH"
+  - PIPE=/tmp/snapcast/snapchromecast
+  - CONTROL=notused
+devices:
+    - "/dev/snd:/dev/snd"
