@@ -4,9 +4,10 @@ default_config:
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 http:
-  base_url: home.pasquet.co
   use_x_forwarded_for: true
-  trusted_proxies: 172.19.0.20
+  trusted_proxies:
+    - 127.0.0.1
+    - 172.0.0.0/8
 
 frontend:
   themes: !include_dir_merge_named themes
