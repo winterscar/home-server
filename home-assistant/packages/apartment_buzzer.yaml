@@ -11,7 +11,7 @@ script:
           - media_player.living_room_speaker
         media_content_id: 'https://home.pasquet.co/local/sounds/chime.mp3'
         media_content_type: audio/mp3
-    - service: notify.mobile_app_pixel_4_xl
+    - service: notify.mobile_app_mat_s_phone
       data:
         message: "Someone's at the door!"
         data:
