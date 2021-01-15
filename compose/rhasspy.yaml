@@ -1,9 +1,0 @@
-image: "rhasspy/rhasspy"
-restart: unless-stopped
-volumes:
-    - "${CONFIG}/rhasspy:/profiles"
-ports:
-    - "12101:12101"
-devices:
-    - "/dev/snd:/dev/snd"
-command: --user-profiles /profiles --profile en

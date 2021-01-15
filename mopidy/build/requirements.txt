@@ -1,5 +1,0 @@
-Mopidy==3.1.0
-Mopidy-Iris==3.55.2
-Mopidy-MPD==3.1.0
-Mopidy-Podcast==3.0.0
-Mopidy-Spotify==4.1.0

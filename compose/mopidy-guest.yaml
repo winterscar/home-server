@@ -1,8 +1,0 @@
-build: /config/mopidy/build
-image: mopidy:latest
-ports:
-    - "6600:6600"
-    - "6680:6680"
-volumes:
-    - ${CONFIG}/mopidy/snapcast:/tmp/snapcast/
-    - ${CONFIG}/mopidy/guest/mopidy.conf:/root/.config/mopidy/mopidy.conf
