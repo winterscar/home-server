@@ -39,7 +39,6 @@ recorder:
 
 wake_on_lan:
 
-
 logger:
   default: info
   logs:
