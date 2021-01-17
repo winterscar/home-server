@@ -1,4 +1,4 @@
-- id: 'chromecast_movie_mode' 
+- id: chromecast_movie_mode
   name: Movie Mode
   entities:
     cover.kitchen_blind:
@@ -25,11 +25,1682 @@
       friendly_name: Living Room Projector
       icon: mdi:projector
       state: 'on'
-
-- id: 'evening_mode'
+- id: evening_mode
   name: Evening Mode
   entities:
     cover.kitchen_blind: closed
     cover.living_room_curtain: closed
     cover.office_blind: closed
     cover.bedroom_curtain: closed
+- id: '1610901062616'
+  name: Movie
+  entities:
+    switch.projector:
+      friendly_name: Living Room Projector
+      icon: mdi:projector
+      state: 'on'
+    cover.living_room_curtain:
+      current_position: 0
+      friendly_name: Living Room Curtain
+      assumed_state: true
+      supported_features: 15
+      device_class: ''
+      state: closed
+    light.living_room_light:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 26
+      linkquality: 105
+      state: 'on'
+      update:
+        state: available
+      update_available: true
+      friendly_name: Living Room Light
+      supported_features: 45
+    light.living_room_nanoleaf:
+      min_mireds: 154
+      max_mireds: 833
+      effect_list:
+      - Christmas Lights
+      - Color Burst
+      - Fireworks
+      - Flames
+      - Forest
+      - Fox
+      - High Contrast
+      - Inner Peace
+      - Meteor Shower
+      - Nemo
+      - Northern Lights
+      - Oranges
+      - Paint Splatter
+      - Pulse Pop Beats
+      - Rhythmic Northern Lights
+      - Ripple
+      - Romantic
+      - Snowfall
+      - Sound Bar
+      - Streaking Notes
+      - Try this before you skip it
+      friendly_name: Living Room Nanoleaf
+      icon: mdi:triangle-outline
+      supported_features: 55
+      state: 'off'
+    light.living_room_table_light:
+      friendly_name: Living Room Table Light
+      supported_features: 8
+      state: 'off'
+    media_player.amplifier:
+      source_list:
+      - Chrome Cast
+      - Projector
+      - Switch
+      - Mats PC
+      - Music
+      sound_mode_list:
+      - Auto
+      - Direct
+      - Pure Direct
+      - Stereo
+      - Extended Stereo
+      - Surround
+      - Auto Surround
+      - Multichannel PCM
+      - Dolby Digital
+      - DTS Surround
+      - THX
+      - Mono
+      - Extended Mono
+      - Action
+      - Drama
+      - Entertainment Show
+      - Advanced Game
+      - Sports
+      - Classical
+      - Rock/Pop
+      - Unplugged
+      - Front Stage Surround
+      volume_level: 0.7466666666666667
+      is_volume_muted: false
+      source: Chrome Cast
+      sound_mode: Extended Stereo
+      video_information:
+        input_resolution: 4K(3840x2160) 29 Hz
+        input_color_schema: YCbCr422
+        input_color_depth: 24bit
+        output_resolution: 4K(3840x2160) 29 Hz
+        output_color_schema: YCbCr422
+        output_color_depth: 24bit
+        picture_mode: ''
+      friendly_name: 'Amplifier '
+      supported_features: 69516
+      state: 'on'
+- id: '1610901301356'
+  name: TV
+  entities:
+    switch.projector:
+      friendly_name: Living Room Projector
+      icon: mdi:projector
+      state: 'on'
+    cover.living_room_curtain:
+      current_position: 0
+      friendly_name: Living Room Curtain
+      assumed_state: true
+      supported_features: 15
+      device_class: ''
+      state: closed
+    light.living_room_light:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 26
+      linkquality: 84
+      state: 'on'
+      update:
+        state: available
+      update_available: true
+      friendly_name: Living Room Light
+      supported_features: 45
+    light.living_room_nanoleaf:
+      min_mireds: 154
+      max_mireds: 833
+      effect_list:
+      - Christmas Lights
+      - Color Burst
+      - Fireworks
+      - Flames
+      - Forest
+      - Fox
+      - High Contrast
+      - Inner Peace
+      - Meteor Shower
+      - Nemo
+      - Northern Lights
+      - Oranges
+      - Paint Splatter
+      - Pulse Pop Beats
+      - Rhythmic Northern Lights
+      - Ripple
+      - Romantic
+      - Snowfall
+      - Sound Bar
+      - Streaking Notes
+      - Try this before you skip it
+      friendly_name: Living Room Nanoleaf
+      icon: mdi:triangle-outline
+      supported_features: 55
+      state: 'off'
+    light.living_room_table_light:
+      friendly_name: Living Room Table Light
+      supported_features: 8
+      state: 'off'
+    media_player.amplifier:
+      source_list:
+      - Chrome Cast
+      - Projector
+      - Switch
+      - Mats PC
+      - Music
+      sound_mode_list:
+      - Auto
+      - Direct
+      - Pure Direct
+      - Stereo
+      - Extended Stereo
+      - Surround
+      - Auto Surround
+      - Multichannel PCM
+      - Dolby Digital
+      - DTS Surround
+      - THX
+      - Mono
+      - Extended Mono
+      - Action
+      - Drama
+      - Entertainment Show
+      - Advanced Game
+      - Sports
+      - Classical
+      - Rock/Pop
+      - Unplugged
+      - Front Stage Surround
+      volume_level: 0.6933333333333334
+      is_volume_muted: false
+      source: Chrome Cast
+      sound_mode: Extended Stereo
+      video_information:
+        input_resolution: Unknown
+        input_color_schema: ''
+        input_color_depth: 24bit
+        output_resolution: Unknown
+        output_color_schema: ''
+        output_color_depth: 24bit
+        picture_mode: ''
+      audio_information:
+        format: PCM
+        input_frequency: 48 kHz
+        input_channels: 2.0 ch
+        listening_mode: All Ch Stereo
+        output_channels: 5.0 ch
+        output_frequency: ''
+      friendly_name: 'Amplifier '
+      supported_features: 69516
+      state: 'on'
+- id: '1610901404380'
+  name: Eating
+  entities:
+    media_player.amplifier:
+      source_list:
+      - Chrome Cast
+      - Projector
+      - Switch
+      - Mats PC
+      - Music
+      sound_mode_list:
+      - Auto
+      - Direct
+      - Pure Direct
+      - Stereo
+      - Extended Stereo
+      - Surround
+      - Auto Surround
+      - Multichannel PCM
+      - Dolby Digital
+      - DTS Surround
+      - THX
+      - Mono
+      - Extended Mono
+      - Action
+      - Drama
+      - Entertainment Show
+      - Advanced Game
+      - Sports
+      - Classical
+      - Rock/Pop
+      - Unplugged
+      - Front Stage Surround
+      volume_level: 0.6133333333333333
+      is_volume_muted: false
+      source: Chrome Cast
+      sound_mode: Extended Stereo
+      video_information:
+        input_resolution: 4K(3840x2160) 29 Hz
+        input_color_schema: YCbCr422
+        input_color_depth: 24bit
+        output_resolution: 4K(3840x2160) 29 Hz
+        output_color_schema: YCbCr422
+        output_color_depth: 24bit
+        picture_mode: ''
+      audio_information:
+        format: PCM
+        input_frequency: 48 kHz
+        input_channels: 2.0 ch
+        listening_mode: All Ch Stereo
+        output_channels: 5.0 ch
+        output_frequency: ''
+      friendly_name: 'Amplifier '
+      supported_features: 69516
+      state: 'on'
+    light.living_room_table_light:
+      friendly_name: Living Room Table Light
+      supported_features: 8
+      state: 'on'
+    light.living_room_light:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 26
+      linkquality: 81
+      state: 'off'
+      update:
+        state: available
+      update_available: true
+      friendly_name: Living Room Light
+      supported_features: 45
+    light.living_room_nanoleaf:
+      min_mireds: 154
+      max_mireds: 833
+      effect_list:
+      - Christmas Lights
+      - Color Burst
+      - Fireworks
+      - Flames
+      - Forest
+      - Fox
+      - High Contrast
+      - Inner Peace
+      - Meteor Shower
+      - Nemo
+      - Northern Lights
+      - Oranges
+      - Paint Splatter
+      - Pulse Pop Beats
+      - Rhythmic Northern Lights
+      - Ripple
+      - Romantic
+      - Snowfall
+      - Sound Bar
+      - Streaking Notes
+      - Try this before you skip it
+      brightness: 247
+      effect: Meteor Shower
+      friendly_name: Living Room Nanoleaf
+      icon: mdi:triangle-outline
+      supported_features: 55
+      state: 'on'
+- id: '1610901537848'
+  name: Living Room Occupied Day
+  entities:
+    media_player.amplifier:
+      source_list:
+      - Chrome Cast
+      - Projector
+      - Switch
+      - Mats PC
+      - Music
+      sound_mode_list:
+      - Auto
+      - Direct
+      - Pure Direct
+      - Stereo
+      - Extended Stereo
+      - Surround
+      - Auto Surround
+      - Multichannel PCM
+      - Dolby Digital
+      - DTS Surround
+      - THX
+      - Mono
+      - Extended Mono
+      - Action
+      - Drama
+      - Entertainment Show
+      - Advanced Game
+      - Sports
+      - Classical
+      - Rock/Pop
+      - Unplugged
+      - Front Stage Surround
+      volume_level: 0.6133333333333333
+      is_volume_muted: false
+      source: Chrome Cast
+      sound_mode: Extended Stereo
+      video_information:
+        input_resolution: 4K(3840x2160) 29 Hz
+        input_color_schema: YCbCr422
+        input_color_depth: 24bit
+        output_resolution: 4K(3840x2160) 29 Hz
+        output_color_schema: YCbCr422
+        output_color_depth: 24bit
+        picture_mode: ''
+      audio_information:
+        format: PCM
+        input_frequency: 48 kHz
+        input_channels: 2.0 ch
+        listening_mode: All Ch Stereo
+        output_channels: 5.0 ch
+        output_frequency: ''
+      friendly_name: 'Amplifier '
+      supported_features: 69516
+      state: 'on'
+    switch.projector:
+      friendly_name: Living Room Projector
+      icon: mdi:projector
+      state: 'on'
+    light.living_room_table_light:
+      friendly_name: Living Room Table Light
+      supported_features: 8
+      state: 'on'
+    light.living_room_nanoleaf:
+      min_mireds: 154
+      max_mireds: 833
+      effect_list:
+      - Christmas Lights
+      - Color Burst
+      - Fireworks
+      - Flames
+      - Forest
+      - Fox
+      - High Contrast
+      - Inner Peace
+      - Meteor Shower
+      - Nemo
+      - Northern Lights
+      - Oranges
+      - Paint Splatter
+      - Pulse Pop Beats
+      - Rhythmic Northern Lights
+      - Ripple
+      - Romantic
+      - Snowfall
+      - Sound Bar
+      - Streaking Notes
+      - Try this before you skip it
+      friendly_name: Living Room Nanoleaf
+      icon: mdi:triangle-outline
+      supported_features: 55
+      state: 'off'
+    light.living_room_light:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 26
+      linkquality: 81
+      state: 'off'
+      update:
+        state: available
+      update_available: true
+      friendly_name: Living Room Light
+      supported_features: 45
+    cover.living_room_curtain:
+      current_position: 100
+      friendly_name: Living Room Curtain
+      assumed_state: true
+      supported_features: 15
+      device_class: ''
+      state: open
+- id: '1610901666038'
+  name: Living Room Occupied Night
+  entities:
+    media_player.amplifier:
+      source_list:
+      - Chrome Cast
+      - Projector
+      - Switch
+      - Mats PC
+      - Music
+      sound_mode_list:
+      - Auto
+      - Direct
+      - Pure Direct
+      - Stereo
+      - Extended Stereo
+      - Surround
+      - Auto Surround
+      - Multichannel PCM
+      - Dolby Digital
+      - DTS Surround
+      - THX
+      - Mono
+      - Extended Mono
+      - Action
+      - Drama
+      - Entertainment Show
+      - Advanced Game
+      - Sports
+      - Classical
+      - Rock/Pop
+      - Unplugged
+      - Front Stage Surround
+      volume_level: 0.6133333333333333
+      is_volume_muted: false
+      source: Chrome Cast
+      sound_mode: Extended Stereo
+      video_information:
+        input_resolution: 4K(3840x2160) 29 Hz
+        input_color_schema: YCbCr422
+        input_color_depth: 24bit
+        output_resolution: 4K(3840x2160) 29 Hz
+        output_color_schema: YCbCr422
+        output_color_depth: 24bit
+        picture_mode: ''
+      audio_information:
+        format: PCM
+        input_frequency: 48 kHz
+        input_channels: 2.0 ch
+        listening_mode: All Ch Stereo
+        output_channels: 5.0 ch
+        output_frequency: ''
+      friendly_name: 'Amplifier '
+      supported_features: 69516
+      state: 'on'
+    switch.projector:
+      friendly_name: Living Room Projector
+      icon: mdi:projector
+      state: 'on'
+    light.living_room_table_light:
+      friendly_name: Living Room Table Light
+      supported_features: 8
+      state: 'off'
+    light.living_room_nanoleaf:
+      min_mireds: 154
+      max_mireds: 833
+      effect_list:
+      - Christmas Lights
+      - Color Burst
+      - Fireworks
+      - Flames
+      - Forest
+      - Fox
+      - High Contrast
+      - Inner Peace
+      - Meteor Shower
+      - Nemo
+      - Northern Lights
+      - Oranges
+      - Paint Splatter
+      - Pulse Pop Beats
+      - Rhythmic Northern Lights
+      - Ripple
+      - Romantic
+      - Snowfall
+      - Sound Bar
+      - Streaking Notes
+      - Try this before you skip it
+      brightness: 242
+      color_temp: 500
+      hs_color:
+      - 30
+      - 95
+      rgb_color:
+      - 255
+      - 133
+      - 12
+      xy_color:
+      - 0.603
+      - 0.379
+      friendly_name: Living Room Nanoleaf
+      icon: mdi:triangle-outline
+      supported_features: 55
+      state: 'on'
+    light.living_room_light:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 243
+      linkquality: 87
+      state: 'on'
+      update:
+        state: available
+      update_available: true
+      friendly_name: Living Room Light
+      supported_features: 45
+    cover.living_room_curtain:
+      current_position: 0
+      friendly_name: Living Room Curtain
+      assumed_state: true
+      supported_features: 15
+      device_class: ''
+      state: closed
+- id: '1610901723672'
+  name: Living Room Empty
+  entities:
+    light.living_room_light:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 243
+      linkquality: 87
+      state: 'off'
+      update:
+        state: available
+      update_available: true
+      friendly_name: Living Room Light
+      supported_features: 45
+    switch.projector:
+      friendly_name: Living Room Projector
+      icon: mdi:projector
+      state: 'on'
+    media_player.amplifier:
+      source_list:
+      - Chrome Cast
+      - Projector
+      - Switch
+      - Mats PC
+      - Music
+      sound_mode_list:
+      - Auto
+      - Direct
+      - Pure Direct
+      - Stereo
+      - Extended Stereo
+      - Surround
+      - Auto Surround
+      - Multichannel PCM
+      - Dolby Digital
+      - DTS Surround
+      - THX
+      - Mono
+      - Extended Mono
+      - Action
+      - Drama
+      - Entertainment Show
+      - Advanced Game
+      - Sports
+      - Classical
+      - Rock/Pop
+      - Unplugged
+      - Front Stage Surround
+      volume_level: 0.6133333333333333
+      is_volume_muted: false
+      source: Chrome Cast
+      sound_mode: Extended Stereo
+      video_information:
+        input_resolution: 4K(3840x2160) 29 Hz
+        input_color_schema: YCbCr422
+        input_color_depth: 24bit
+        output_resolution: 4K(3840x2160) 29 Hz
+        output_color_schema: YCbCr422
+        output_color_depth: 24bit
+        picture_mode: ''
+      audio_information:
+        format: PCM
+        input_frequency: 48 kHz
+        input_channels: 2.0 ch
+        listening_mode: All Ch Stereo
+        output_channels: 5.0 ch
+        output_frequency: ''
+      friendly_name: 'Amplifier '
+      supported_features: 69516
+      state: 'on'
+    media_player.living_room_tv:
+      friendly_name: Living Room TV
+      supported_features: 152461
+      state: 'off'
+- id: '1610902370492'
+  name: Gaming (Switch)
+  entities:
+    light.living_room_lights:
+      min_mireds: 154
+      max_mireds: 833
+      effect_list:
+      - Sound Bar
+      - okay
+      - finish_effect
+      - Northern Lights
+      - Try this before you skip it
+      - Oranges
+      - High Contrast
+      - breathe
+      - Ripple
+      - Fox
+      - Flames
+      - Fireworks
+      - Color Burst
+      - Meteor Shower
+      - stop_effect
+      - Paint Splatter
+      - Streaking Notes
+      - Snowfall
+      - Forest
+      - channel_change
+      - Inner Peace
+      - Christmas Lights
+      - Rhythmic Northern Lights
+      - Nemo
+      - blink
+      - Romantic
+      - Pulse Pop Beats
+      entity_id:
+      - light.living_room_light
+      - light.living_room_table_light
+      - light.living_room_nanoleaf
+      friendly_name: Living Room Lights
+      icon: mdi:lightbulb-group
+      supported_features: 63
+      state: 'off'
+    cover.living_room_curtain:
+      current_position: 0
+      friendly_name: Living Room Curtain
+      assumed_state: true
+      supported_features: 15
+      device_class: ''
+      state: closed
+    media_player.amplifier:
+      source_list:
+      - Chrome Cast
+      - Projector
+      - Switch
+      - Mats PC
+      - Music
+      sound_mode_list:
+      - Auto
+      - Direct
+      - Pure Direct
+      - Stereo
+      - Extended Stereo
+      - Surround
+      - Auto Surround
+      - Multichannel PCM
+      - Dolby Digital
+      - DTS Surround
+      - THX
+      - Mono
+      - Extended Mono
+      - Action
+      - Drama
+      - Entertainment Show
+      - Advanced Game
+      - Sports
+      - Classical
+      - Rock/Pop
+      - Unplugged
+      - Front Stage Surround
+      volume_level: 0.5466666666666666
+      is_volume_muted: false
+      source: Switch
+      sound_mode: Extended Stereo
+      video_information:
+        input_resolution: Unknown
+        input_color_schema: ''
+        input_color_depth: 24bit
+        output_resolution: 1920 x 1080p
+        output_color_schema: RGB
+        output_color_depth: 24bit
+        picture_mode: ''
+      audio_information:
+        format: ''
+        input_frequency: ''
+        input_channels: ''
+        listening_mode: All Ch Stereo
+        output_channels: 5.0 ch
+        output_frequency: ''
+      friendly_name: 'Amplifier '
+      supported_features: 69516
+      state: 'on'
+    switch.projector:
+      friendly_name: Living Room Projector
+      icon: mdi:projector
+      state: 'on'
+- id: '1610902517452'
+  name: Gaming (VR)
+  entities:
+    switch.projector:
+      friendly_name: Living Room Projector
+      icon: mdi:projector
+      state: 'on'
+    media_player.amplifier:
+      source_list:
+      - Chrome Cast
+      - Projector
+      - Switch
+      - Mats PC
+      - Music
+      sound_mode_list:
+      - Auto
+      - Direct
+      - Pure Direct
+      - Stereo
+      - Extended Stereo
+      - Surround
+      - Auto Surround
+      - Multichannel PCM
+      - Dolby Digital
+      - DTS Surround
+      - THX
+      - Mono
+      - Extended Mono
+      - Action
+      - Drama
+      - Entertainment Show
+      - Advanced Game
+      - Sports
+      - Classical
+      - Rock/Pop
+      - Unplugged
+      - Front Stage Surround
+      volume_level: 0.6133333333333333
+      is_volume_muted: false
+      source: Chrome Cast
+      sound_mode: Extended Stereo
+      video_information:
+        input_resolution: 4K(3840x2160) 29 Hz
+        input_color_schema: YCbCr422
+        input_color_depth: 24bit
+        output_resolution: 4K(3840x2160) 29 Hz
+        output_color_schema: YCbCr422
+        output_color_depth: 24bit
+        picture_mode: ''
+      audio_information:
+        format: PCM
+        input_frequency: 48 kHz
+        input_channels: 2.0 ch
+        listening_mode: All Ch Stereo
+        output_channels: 5.0 ch
+        output_frequency: ''
+      friendly_name: 'Amplifier '
+      supported_features: 69516
+      state: 'on'
+    light.living_room_lights:
+      min_mireds: 154
+      max_mireds: 833
+      effect_list:
+      - Sound Bar
+      - okay
+      - finish_effect
+      - Northern Lights
+      - Try this before you skip it
+      - Oranges
+      - High Contrast
+      - breathe
+      - Ripple
+      - Fox
+      - Flames
+      - Fireworks
+      - Color Burst
+      - Meteor Shower
+      - stop_effect
+      - Paint Splatter
+      - Streaking Notes
+      - Snowfall
+      - Forest
+      - channel_change
+      - Inner Peace
+      - Christmas Lights
+      - Rhythmic Northern Lights
+      - Nemo
+      - blink
+      - Romantic
+      - Pulse Pop Beats
+      brightness: 252
+      color_temp: 154
+      hs_color:
+      - 38
+      - 3
+      rgb_color:
+      - 255
+      - 252
+      - 247
+      xy_color:
+      - 0.329
+      - 0.334
+      entity_id:
+      - light.living_room_light
+      - light.living_room_table_light
+      - light.living_room_nanoleaf
+      friendly_name: Living Room Lights
+      icon: mdi:lightbulb-group
+      supported_features: 63
+      state: 'on'
+    cover.living_room_curtain:
+      current_position: 0
+      friendly_name: Living Room Curtain
+      assumed_state: true
+      supported_features: 15
+      device_class: ''
+      state: closed
+- id: '1610903047361'
+  name: Social
+  entities:
+    light.living_room_lights:
+      min_mireds: 154
+      max_mireds: 833
+      effect_list:
+      - Sound Bar
+      - okay
+      - finish_effect
+      - Northern Lights
+      - Try this before you skip it
+      - Oranges
+      - High Contrast
+      - breathe
+      - Ripple
+      - Fox
+      - Flames
+      - Fireworks
+      - Color Burst
+      - Meteor Shower
+      - stop_effect
+      - Paint Splatter
+      - Streaking Notes
+      - Snowfall
+      - Forest
+      - channel_change
+      - Inner Peace
+      - Christmas Lights
+      - Rhythmic Northern Lights
+      - Nemo
+      - blink
+      - Romantic
+      - Pulse Pop Beats
+      brightness: 224
+      color_temp: 500
+      hs_color:
+      - 30
+      - 95
+      rgb_color:
+      - 255
+      - 133
+      - 12
+      xy_color:
+      - 0.603
+      - 0.379
+      entity_id:
+      - light.living_room_light
+      - light.living_room_table_light
+      - light.living_room_nanoleaf
+      friendly_name: Living Room Lights
+      icon: mdi:lightbulb-group
+      supported_features: 63
+      state: 'on'
+    media_player.amplifier:
+      source_list:
+      - Chrome Cast
+      - Projector
+      - Switch
+      - Mats PC
+      - Music
+      sound_mode_list:
+      - Auto
+      - Direct
+      - Pure Direct
+      - Stereo
+      - Extended Stereo
+      - Surround
+      - Auto Surround
+      - Multichannel PCM
+      - Dolby Digital
+      - DTS Surround
+      - THX
+      - Mono
+      - Extended Mono
+      - Action
+      - Drama
+      - Entertainment Show
+      - Advanced Game
+      - Sports
+      - Classical
+      - Rock/Pop
+      - Unplugged
+      - Front Stage Surround
+      volume_level: 0.6
+      is_volume_muted: false
+      source: Chrome Cast
+      sound_mode: Extended Stereo
+      video_information:
+        input_resolution: 4K(3840x2160) 29 Hz
+        input_color_schema: YCbCr422
+        input_color_depth: 24bit
+        output_resolution: 4K(3840x2160) 29 Hz
+        output_color_schema: YCbCr422
+        output_color_depth: 24bit
+        picture_mode: ''
+      audio_information:
+        format: PCM
+        input_frequency: 48 kHz
+        input_channels: 2.0 ch
+        listening_mode: All Ch Stereo
+        output_channels: 5.0 ch
+        output_frequency: ''
+      friendly_name: 'Amplifier '
+      supported_features: 69516
+      state: 'on'
+    light.living_room_nanoleaf:
+      min_mireds: 154
+      max_mireds: 833
+      effect_list:
+      - Christmas Lights
+      - Color Burst
+      - Fireworks
+      - Flames
+      - Forest
+      - Fox
+      - High Contrast
+      - Inner Peace
+      - Meteor Shower
+      - Nemo
+      - Northern Lights
+      - Oranges
+      - Paint Splatter
+      - Pulse Pop Beats
+      - Rhythmic Northern Lights
+      - Ripple
+      - Romantic
+      - Snowfall
+      - Sound Bar
+      - Streaking Notes
+      - Try this before you skip it
+      brightness: 224
+      color_temp: 500
+      hs_color:
+      - 30
+      - 95
+      rgb_color:
+      - 255
+      - 133
+      - 12
+      xy_color:
+      - 0.603
+      - 0.379
+      friendly_name: Living Room Nanoleaf
+      icon: mdi:triangle-outline
+      supported_features: 55
+      state: 'on'
+    cover.living_room_curtain:
+      current_position: 100
+      friendly_name: Living Room Curtain
+      assumed_state: true
+      supported_features: 15
+      device_class: ''
+      state: open
+- id: '1610903286573'
+  name: Living Room Relax
+  entities:
+    light.living_room_nanoleaf:
+      min_mireds: 154
+      max_mireds: 833
+      effect_list:
+      - Christmas Lights
+      - Color Burst
+      - Fireworks
+      - Flames
+      - Forest
+      - Fox
+      - High Contrast
+      - Inner Peace
+      - Meteor Shower
+      - Nemo
+      - Northern Lights
+      - Oranges
+      - Paint Splatter
+      - Pulse Pop Beats
+      - Rhythmic Northern Lights
+      - Ripple
+      - Romantic
+      - Snowfall
+      - Sound Bar
+      - Streaking Notes
+      - Try this before you skip it
+      brightness: 221
+      color_temp: 500
+      hs_color:
+      - 30
+      - 95
+      rgb_color:
+      - 255
+      - 133
+      - 12
+      xy_color:
+      - 0.603
+      - 0.379
+      friendly_name: Living Room Nanoleaf
+      icon: mdi:triangle-outline
+      supported_features: 55
+      state: 'on'
+    media_player.amplifier:
+      source_list:
+      - Chrome Cast
+      - Projector
+      - Switch
+      - Mats PC
+      - Music
+      sound_mode_list:
+      - Auto
+      - Direct
+      - Pure Direct
+      - Stereo
+      - Extended Stereo
+      - Surround
+      - Auto Surround
+      - Multichannel PCM
+      - Dolby Digital
+      - DTS Surround
+      - THX
+      - Mono
+      - Extended Mono
+      - Action
+      - Drama
+      - Entertainment Show
+      - Advanced Game
+      - Sports
+      - Classical
+      - Rock/Pop
+      - Unplugged
+      - Front Stage Surround
+      volume_level: 0.6
+      is_volume_muted: false
+      source: Chrome Cast
+      sound_mode: Extended Stereo
+      video_information:
+        input_resolution: 4K(3840x2160) 29 Hz
+        input_color_schema: YCbCr422
+        input_color_depth: 24bit
+        output_resolution: 4K(3840x2160) 29 Hz
+        output_color_schema: YCbCr422
+        output_color_depth: 24bit
+        picture_mode: ''
+      audio_information:
+        format: PCM
+        input_frequency: 48 kHz
+        input_channels: 2.0 ch
+        listening_mode: All Ch Stereo
+        output_channels: 5.0 ch
+        output_frequency: ''
+      friendly_name: 'Amplifier '
+      supported_features: 69516
+      state: 'on'
+    media_player.living_room_tv:
+      volume_level: 1
+      is_volume_muted: false
+      media_content_id: https://www.home-assistant.io/images/cast/splash.png
+      media_position: 0
+      media_position_updated_at: '2021-01-17T17:05:43.693799+00:00'
+      app_id: CC1AD845
+      app_name: Default Media Receiver
+      entity_picture_local:
+      friendly_name: Living Room TV
+      supported_features: 152463
+      state: idle
+- id: '1610903353358'
+  name: Cooking Gay Boy
+  entities:
+    cover.kitchen_blind:
+      current_position: 100
+      battery: 70
+      linkquality: 90
+      position: 100
+      update:
+        state: available
+      update_available: true
+      friendly_name: Kitchen Blind
+      supported_features: 15
+      state: open
+    switch.kitchen_lights:
+      linkquality: 84
+      state: 'on'
+      state_left: 'ON'
+      state_right: 'OFF'
+      temperature: 30
+      friendly_name: Kitchen Lights
+      icon: mdi:lightbulb
+    media_player.kitchen_speaker:
+      friendly_name: Kitchen speaker
+      supported_features: 152461
+      state: 'off'
+- id: '1610903404302'
+  name: Cooking Jessie
+  entities:
+    cover.kitchen_blind:
+      current_position: 100
+      battery: 70
+      linkquality: 90
+      position: 100
+      update:
+        state: available
+      update_available: true
+      friendly_name: Kitchen Blind
+      supported_features: 15
+      state: open
+    switch.kitchen_lights:
+      linkquality: 87
+      state: 'on'
+      state_left: 'ON'
+      state_right: 'ON'
+      temperature: 30
+      friendly_name: Kitchen Lights
+      icon: mdi:lightbulb
+    media_player.kitchen_speaker:
+      friendly_name: Kitchen speaker
+      supported_features: 152461
+      state: 'off'
+- id: '1610903448041'
+  name: Kitchen Empty
+  entities:
+    switch.kitchen_lights:
+      linkquality: 87
+      state: 'off'
+      state_left: 'OFF'
+      state_right: 'OFF'
+      temperature: 30
+      friendly_name: Kitchen Lights
+      icon: mdi:lightbulb
+- id: '1610903486154'
+  name: Kitchen Occupied Day
+  entities:
+    cover.kitchen_blind:
+      current_position: 100
+      battery: 70
+      linkquality: 90
+      position: 100
+      update:
+        state: available
+      update_available: true
+      friendly_name: Kitchen Blind
+      supported_features: 15
+      state: open
+    switch.kitchen_lights:
+      linkquality: 87
+      state: 'on'
+      state_left: 'ON'
+      state_right: 'ON'
+      temperature: 30
+      friendly_name: Kitchen Lights
+      icon: mdi:lightbulb
+- id: '1610903938227'
+  name: Kitchen Occupied Night
+  entities:
+    switch.kitchen_lights:
+      linkquality: 84
+      state: 'on'
+      state_left: 'ON'
+      state_right: 'ON'
+      temperature: 30
+      friendly_name: Kitchen Lights
+      icon: mdi:lightbulb
+    cover.kitchen_blind:
+      current_position: 100
+      battery: 70
+      linkquality: 90
+      position: 100
+      update:
+        state: available
+      update_available: true
+      friendly_name: Kitchen Blind
+      supported_features: 15
+      state: open
+- id: '1610904164506'
+  name: Sleep
+  entities:
+    switch.projector:
+      friendly_name: Living Room Projector
+      icon: mdi:projector
+      state: 'off'
+    media_player.amplifier:
+      source_list:
+      - Chrome Cast
+      - Projector
+      - Switch
+      - Mats PC
+      - Music
+      sound_mode_list:
+      - Auto
+      - Direct
+      - Pure Direct
+      - Stereo
+      - Extended Stereo
+      - Surround
+      - Auto Surround
+      - Multichannel PCM
+      - Dolby Digital
+      - DTS Surround
+      - THX
+      - Mono
+      - Extended Mono
+      - Action
+      - Drama
+      - Entertainment Show
+      - Advanced Game
+      - Sports
+      - Classical
+      - Rock/Pop
+      - Unplugged
+      - Front Stage Surround
+      friendly_name: 'Amplifier '
+      supported_features: 69516
+      state: 'off'
+    cover.bedroom_curtain:
+      current_position: 0
+      friendly_name: Bedroom Curtain
+      assumed_state: true
+      supported_features: 15
+      device_class: ''
+      state: closed
+    cover.kitchen_blind:
+      current_position: 100
+      battery: 70
+      linkquality: 90
+      position: 100
+      update:
+        state: available
+      update_available: true
+      friendly_name: Kitchen Blind
+      supported_features: 15
+      state: open
+    cover.living_room_curtain:
+      current_position: 0
+      friendly_name: Living Room Curtain
+      assumed_state: true
+      supported_features: 15
+      device_class: ''
+      state: closed
+    switch.mats_pc:
+      friendly_name: Mat's PC
+      icon: mdi:laptop
+      state: 'on'
+    light.bedroom_lights:
+      min_mireds: 153
+      max_mireds: 833
+      effect_list:
+      - Sound Bar
+      - okay
+      - finish_effect
+      - Northern Lights
+      - breathe
+      - Ripple
+      - Flames
+      - Fireworks
+      - Color Burst
+      - Meteor Shower
+      - stop_effect
+      - Paint Splatter
+      - Streaking Notes
+      - Snowfall
+      - Forest
+      - channel_change
+      - Inner Peace
+      - Rhythmic Northern Lights
+      - Nemo
+      - blink
+      - Romantic
+      - Pulse Pop Beats
+      entity_id:
+      - light.bedroom_light
+      - light.bedroom_nanoleaf
+      friendly_name: Bedroom Lights
+      icon: mdi:lightbulb-group
+      supported_features: 63
+      state: 'off'
+- id: '1610904243889'
+  name: Love
+  entities:
+    light.bedroom_nanoleaf:
+      min_mireds: 154
+      max_mireds: 833
+      effect_list:
+      - Color Burst
+      - Fireworks
+      - Flames
+      - Forest
+      - Inner Peace
+      - Meteor Shower
+      - Nemo
+      - Northern Lights
+      - Paint Splatter
+      - Pulse Pop Beats
+      - Rhythmic Northern Lights
+      - Ripple
+      - Romantic
+      - Snowfall
+      - Sound Bar
+      - Streaking Notes
+      brightness: 51
+      color_temp: 500
+      hs_color:
+      - 270
+      - 71
+      rgb_color:
+      - 164
+      - 73
+      - 255
+      xy_color:
+      - 0.261
+      - 0.123
+      friendly_name: Bedroom Nanoleaf
+      icon: mdi:triangle-outline
+      supported_features: 55
+      state: 'on'
+    cover.bedroom_curtain:
+      current_position: 0
+      friendly_name: Bedroom Curtain
+      assumed_state: true
+      supported_features: 15
+      device_class: ''
+      state: closed
+    light.bedroom_light:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 209
+      color:
+        x: 0.526676280311873
+        y: 0.41329727450763
+      color_temp: 500
+      linkquality: 102
+      state: 'off'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Bedroom Light
+      supported_features: 63
+- id: '1610904291421'
+  name: Bedroom Relax
+  entities:
+    light.bedroom_nanoleaf:
+      min_mireds: 154
+      max_mireds: 833
+      effect_list:
+      - Color Burst
+      - Fireworks
+      - Flames
+      - Forest
+      - Inner Peace
+      - Meteor Shower
+      - Nemo
+      - Northern Lights
+      - Paint Splatter
+      - Pulse Pop Beats
+      - Rhythmic Northern Lights
+      - Ripple
+      - Romantic
+      - Snowfall
+      - Sound Bar
+      - Streaking Notes
+      brightness: 206
+      color_temp: 500
+      hs_color:
+      - 30
+      - 95
+      rgb_color:
+      - 255
+      - 133
+      - 12
+      xy_color:
+      - 0.603
+      - 0.379
+      friendly_name: Bedroom Nanoleaf
+      icon: mdi:triangle-outline
+      supported_features: 55
+      state: 'on'
+    light.bedroom_light:
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 76
+      color_temp: 335
+      hs_color:
+      - 35.161
+      - 72.941
+      rgb_color:
+      - 255
+      - 177
+      - 69
+      xy_color:
+      - 0.525
+      - 0.411
+      color:
+        x: 0.525
+        y: 0.413
+      linkquality: 102
+      state: 'on'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Bedroom Light
+      supported_features: 63
+- id: '1610904333162'
+  name: Bedroom Occupied Day
+  entities:
+    light.bedroom_lights:
+      min_mireds: 153
+      max_mireds: 833
+      effect_list:
+      - Sound Bar
+      - okay
+      - finish_effect
+      - Northern Lights
+      - breathe
+      - Ripple
+      - Flames
+      - Fireworks
+      - Color Burst
+      - Meteor Shower
+      - stop_effect
+      - Paint Splatter
+      - Streaking Notes
+      - Snowfall
+      - Forest
+      - channel_change
+      - Inner Peace
+      - Rhythmic Northern Lights
+      - Nemo
+      - blink
+      - Romantic
+      - Pulse Pop Beats
+      brightness: 205
+      color_temp: 417
+      hs_color:
+      - 32.581
+      - 83.971
+      rgb_color:
+      - 255
+      - 157
+      - 40
+      xy_color:
+      - 0.564
+      - 0.4
+      entity_id:
+      - light.bedroom_light
+      - light.bedroom_nanoleaf
+      friendly_name: Bedroom Lights
+      icon: mdi:lightbulb-group
+      supported_features: 63
+      state: 'on'
+    cover.bedroom_curtain:
+      current_position: 100
+      friendly_name: Bedroom Curtain
+      assumed_state: true
+      supported_features: 15
+      device_class: ''
+      state: open
+- id: '1610904365496'
+  name: Bedroom Occupied Night
+  entities:
+    light.bedroom_lights:
+      min_mireds: 153
+      max_mireds: 833
+      effect_list:
+      - Sound Bar
+      - okay
+      - finish_effect
+      - Northern Lights
+      - breathe
+      - Ripple
+      - Flames
+      - Fireworks
+      - Color Burst
+      - Meteor Shower
+      - stop_effect
+      - Paint Splatter
+      - Streaking Notes
+      - Snowfall
+      - Forest
+      - channel_change
+      - Inner Peace
+      - Rhythmic Northern Lights
+      - Nemo
+      - blink
+      - Romantic
+      - Pulse Pop Beats
+      brightness: 204
+      color_temp: 453
+      hs_color:
+      - 32.273
+      - 83.069
+      rgb_color:
+      - 255
+      - 157
+      - 43
+      xy_color:
+      - 0.563
+      - 0.399
+      entity_id:
+      - light.bedroom_light
+      - light.bedroom_nanoleaf
+      friendly_name: Bedroom Lights
+      icon: mdi:lightbulb-group
+      supported_features: 63
+      state: 'on'
+    cover.bedroom_curtain:
+      current_position: 80
+      friendly_name: Bedroom Curtain
+      assumed_state: true
+      supported_features: 15
+      device_class: ''
+      state: closing
+- id: '1610904387889'
+  name: Bedroom Empty
+  entities:
+    light.bedroom_lights:
+      min_mireds: 153
+      max_mireds: 833
+      effect_list:
+      - Sound Bar
+      - okay
+      - finish_effect
+      - Northern Lights
+      - breathe
+      - Ripple
+      - Flames
+      - Fireworks
+      - Color Burst
+      - Meteor Shower
+      - stop_effect
+      - Paint Splatter
+      - Streaking Notes
+      - Snowfall
+      - Forest
+      - channel_change
+      - Inner Peace
+      - Rhythmic Northern Lights
+      - Nemo
+      - blink
+      - Romantic
+      - Pulse Pop Beats
+      entity_id:
+      - light.bedroom_light
+      - light.bedroom_nanoleaf
+      friendly_name: Bedroom Lights
+      icon: mdi:lightbulb-group
+      supported_features: 63
+      state: 'off'
+- id: '1610904415267'
+  name: Shower Mat
+  entities:
+    cover.bedroom_curtain:
+      current_position: 0
+      friendly_name: Bedroom Curtain
+      assumed_state: true
+      supported_features: 15
+      device_class: ''
+      state: closed
+    media_player.bedroom_speaker:
+      source_list:
+      - Mat
+      - Jessie
+      - Guest
+      volume_level: 1
+      is_volume_muted: false
+      source: Mat
+      latency: 0
+      friendly_name: Bedroom Speaker
+      supported_features: 2060
+      state: 'on'
+- id: '1610904446134'
+  name: Shower Jessie
+  entities:
+    cover.bedroom_curtain:
+      current_position: 0
+      friendly_name: Bedroom Curtain
+      assumed_state: true
+      supported_features: 15
+      device_class: ''
+      state: closed
+    media_player.bedroom_speaker:
+      source_list:
+      - Mat
+      - Jessie
+      - Guest
+      volume_level: 1
+      is_volume_muted: false
+      source: Mat
+      latency: 0
+      friendly_name: Bedroom Speaker
+      supported_features: 2060
+      state: 'on'
