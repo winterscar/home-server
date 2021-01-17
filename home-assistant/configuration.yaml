@@ -22,6 +22,7 @@ homeassistant:
     light_groups:  !include packages/light_groups.yaml
     mat_pc:        !include packages/mat_pc.yaml
     building_door: !include packages/apartment_buzzer.yaml
+    modes:         !include packages/modes.yaml
   # ############################################
 
 # Text to speech
