@@ -1,0 +1,258 @@
+script:
+  movie_mode:
+    sequence:
+      - service: scene.apply
+        data:
+          entities: 
+            switch.projector:
+              state: 'on'
+            cover.living_room_curtain:
+              state: closed
+            cover.kitchen_blind:
+              state: closed
+            light.living_room_light:
+              brightness: 25
+              state: 'on'
+            light.living_room_nanoleaf:
+              state: 'off'
+            light.living_room_table_light:
+              state: 'off'
+            media_player.amplifier:
+              volume_level: 0.75
+              is_volume_muted: false
+              source: Chrome Cast
+              sound_mode: Extended Stereo
+              state: 'on'
+  tv_mode:
+    sequence:
+      - service: scene.apply
+        data:
+          entities:
+            switch.projector:
+              state: 'on'
+            cover.living_room_curtain:
+              state: closed
+            light.living_room_light:
+              brightness: 26
+              state: 'on'
+            light.living_room_nanoleaf:
+              state: 'off'
+            light.living_room_table_light:
+              state: 'off'
+            media_player.amplifier:
+              volume_level: 0.75
+              is_volume_muted: false
+              source: Chrome Cast
+              sound_mode: Extended Stereo
+              state: 'on'
+  eating_mode:
+    sequence:
+      - service: scene.apply
+        data:
+          entities:
+            media_player.amplifier:
+              volume_level: 0.6
+              source: Chrome Cast
+              supported_features: 69516
+              state: 'on'
+            light.living_room_table_light:
+              state: 'on'
+            light.living_room_light:
+              state: 'off'
+            light.living_room_nanoleaf:
+              state: 'on'
+  living_room_occupied_mode:
+    sequence:
+      choose:
+        - conditions: "{{states('sun.sun') == 'below_horizon' }}"
+          sequence:
+            - service: scene.apply
+              data:
+                entities:
+                  media_player.amplifier:
+                    state: 'off'
+                  switch.projector:
+                    state: 'off'
+            - service: script.turn_on_lights
+              data:
+                entity_id:
+                  - light.living_room_light
+                  - light.living_room_nanoleaf
+            - service: light.turn_off
+              entity_id:
+                - light.living_room_table_light
+            - service: cover.close_cover
+              data:
+                entity_id: cover.living_room_curtain
+      # sun above horizon
+      default:
+        - service: scene.apply
+          data:
+            entities:
+              media_player.amplifier:
+                state: 'off'
+              switch.projector:
+                state: 'off'
+        - service: script.turn_on_lights
+          data:
+            entity_id: light.living_room_light
+        - service: light.turn_off
+          entity_id:
+            - light.living_room_table_light
+            - light.living_room_nanoleaf
+        - service: cover.open_cover
+          data:
+            entity_id: cover.living_room_curtain
+  living_room_empty_mode:
+    sequence:
+      - service: scene.apply
+        data:
+          entities:
+            media_player.amplifier:
+              state: 'off'
+            switch.projector:
+              state: 'off'
+            light.living_room_table_light:
+              state: 'off'
+            light.living_room_light:
+              state: 'off'
+            light.living_room_nanoleaf:
+              state: 'off'
+  gaming_mode:
+    fields:
+      device:
+        description: The system to game on
+        example: switch
+    sequence:
+      choose:
+        - conditions: "{{device == 'switch' }}"
+          sequence:
+            - service: scene.apply
+              data:
+                entities:
+                  media_player.amplifier:
+                    state: 'on'
+                    volume_level: 0.55
+                    is_volume_muted: false
+                    source: Switch
+                  switch.projector:
+                    state: 'on'
+                  light.living_room_table_light:
+                    state: 'off'
+                  light.living_room_light:
+                    state: 'off'
+                  light.living_room_nanoleaf:
+                    state: 'off'
+        - conditions: "{{device == 'vr' }}"
+          sequence:
+            - service: scene.apply
+              data:
+                entities:
+                  media_player.amplifier:
+                    state: 'on'
+                    volume_level: 0.55
+                    is_volume_muted: false
+                    source: Mats PC
+                  switch.projector:
+                    state: 'on'
+                  light.living_room_table_light:
+                    state: 'on'
+                  light.living_room_light:
+                    state: 'on'
+                  light.living_room_nanoleaf:
+                    state: 'on'
+                  cover.living_room_curtain:
+                    state: 'closed'
+  social_mode:
+    sequence:
+      - service: scene.apply
+        data:
+          entities:
+            media_player.amplifier:
+              state: 'on'
+              volume_level: 0.40
+              is_volume_muted: false
+              source: Chrome Cast
+            switch.projector:
+              state: 'off'
+            light.living_room_table_light:
+              state: 'off'
+            light.living_room_light:
+              state: 'on'
+            cover.living_room_curtain:
+              state: 'open'
+      - service: light.turn_on
+        data:
+          entity_id: light.living_room_nanoleaf
+          effect: Meteor Shower
+  living_room_relax_mode:
+    sequence:
+      - service: scene.apply
+        data:
+          entities:
+            media_player.amplifier:
+              state: 'on'
+              volume_level: 0.50
+              is_volume_muted: false
+              source: Chrome Cast
+            switch.projector:
+              state: 'off'
+            light.living_room_table_light:
+              state: 'off'
+            light.living_room_light:
+              state: 'on'
+      - service: light.turn_on
+        data:
+          entity_id: light.living_room_nanoleaf
+          effect: Flames
+      - service: media_player.play_media
+        data:
+          entity_id: media_player.living_room_tv
+          media_content_id: "https://www.youtube.com/watch?v=GEbQVdX-YZM"
+          media_content_type: video
+  cooking_mode:
+    fields:
+      person:
+        description: Who is cooking?
+        example: person.mathieu_pasquet
+    sequence:
+      choose:
+        - conditions: "{{person == 'person.mathieu_pasquet'}}"
+          sequence:
+            - service: scene.apply
+              data:
+                entities:
+                  switch.kitchen_lights:
+                    state: 'on'
+                  cover.kitchen_blind:
+                    state: 'open'
+        - conditions: "{{person == 'person.jessie_scotson'}}"
+          sequence:
+            - service: scene.apply
+              data:
+                entities:
+                  switch.kitchen_lights:
+                    state: 'on'
+                  cover.kitchen_blind:
+                    state: 'open'
+  kitchen_empty_mode:
+    sequence:
+      - service: switch.turn_off
+        entity_id: switch.kitchen_lights
+  kitchen_occupied_mode:
+    sequence:
+      choose:
+        - conditions: "{{states('sun.sun') == 'below_horizon' }}"
+          sequence:
+            - service: switch.turn_on
+              entity_id: switch.kitchen_lights
+            - service: cover.close_cover
+              data:
+                entity_id: cover.kitchen_blind
+      # sun above horizon
+      default:
+        - service: switch.turn_on
+          entity_id: switch.kitchen_lights
+        - service: cover.open_cover
+          data:
+            entity_id: cover.kitchen_blind
