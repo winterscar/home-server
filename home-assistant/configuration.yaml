@@ -62,23 +62,12 @@ mqtt:
 influxdb:
   host: mars
 
-media_player:
-  - platform: mpd
-    host: mars
-    port: 6602
-    name: Media - Mat
-  - platform: mpd
-    host: mars
-    port: 6601
-    name: Media - Jessie
-  - platform: mpd
-    host: mars
-    port: 6600
-    name: Media - Guest
-  - platform: snapcast
-    host: mars
-    port: 1705
-
+  media_player:
+    - platform: yamaha_musiccast
+      host: 10.10.10.40
+    - platform: yamaha_musiccast
+      host: 10.10.10.41
+    
 light:
   - platform: nanoleaf
     host: 10.10.10.38
