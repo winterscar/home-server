@@ -47,6 +47,8 @@ logger:
     pyeiscp.protocol: debug
     pyeiscp.connection: debug
 
+media_extractor:
+
 mqtt:
   discovery: true
   broker: mars

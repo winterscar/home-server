@@ -143,6 +143,8 @@ script:
                     state: 'off'
                   light.living_room_nanoleaf:
                     state: 'off'
+                  cover.living_room_curtain:
+                    state: 'closed'
         - conditions: "{{device == 'vr' }}"
           sequence:
             - service: scene.apply
@@ -213,11 +215,11 @@ script:
         data:
           entity_id: light.living_room_nanoleaf
           effect: Flames
-      - service: media_player.play_media
+      - service: media_extractor.play_media
         data:
           entity_id: media_player.living_room_tv
           media_content_id: "https://www.youtube.com/watch?v=GEbQVdX-YZM"
-          media_content_type: video
+          media_content_type: video/youtube
   cooking_mode:
     fields:
       person:
