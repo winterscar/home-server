@@ -181,6 +181,10 @@ script:
               state: 'on'
             cover.living_room_curtain:
               state: 'open'
+      - service: adaptive_lighting.set_manual_control
+        data:
+          entity_id: switch.adaptive_lighting_lights
+          lights: light.living_room_nanoleaf
       - service: light.turn_on
         data:
           entity_id: light.living_room_nanoleaf
@@ -201,6 +205,10 @@ script:
               state: 'off'
             light.living_room_light:
               state: 'on'
+      - service: adaptive_lighting.set_manual_control
+        data:
+          entity_id: switch.adaptive_lighting_lights
+          lights: light.living_room_nanoleaf
       - service: light.turn_on
         data:
           entity_id: light.living_room_nanoleaf
