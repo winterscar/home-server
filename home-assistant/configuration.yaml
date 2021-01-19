@@ -40,6 +40,9 @@ recorder:
 
 wake_on_lan:
 
+spotcast:
+  sp_dc: !secret mat_spotify_sp_dc
+  sp_key: !secret mat_spotify_sp_key
 
 spotify:
   client_id: !secret  spotify_client_id
