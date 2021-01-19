@@ -67,7 +67,7 @@ media_player:
     host: 10.10.10.40
     port: 5004
   - platform: yamaha_musiccast
-    host: 10.10.10.41
+    host: 192.168.1.149
     port: 5005
     
 light:
