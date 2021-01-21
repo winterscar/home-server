@@ -5,4 +5,5 @@ environment:
   - PUID=${USER_ID}
 volumes:
   - ${CONFIG}/multiroom-audio/spotifymat:/music/spotify
+  - ${CONFIG}/daapd:/config
 restart: unless-stopped
