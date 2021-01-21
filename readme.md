@@ -71,7 +71,7 @@ One of the system-services defined on the home server is `update-config`. Its jo
 
 The pipeline consists of a set of steps, triggered by a `push` to the master branch.
 
-Each step of the pipeline is defined as an executable file under `update-config/hooks`, and the files are run in alphabetical order (technically, whatever order `sorted(<list>)` in python returns). Each executable is called with the github payload as it's first and only argument. 
+Each step of the pipeline is defined as an executable file under `update-config/hooks`, and the files are run in alphabetical order (technically, whatever order `sorted(<list>)` in python returns). Each executable is called with the GitHub payload as it's first and only argument. 
 
 ### 00_pull.sh
 > Pulls this repository from github.
