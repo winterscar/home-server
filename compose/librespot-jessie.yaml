@@ -2,7 +2,7 @@ build: /config/librespot
 image: librespot:jessie
 restart: unless-stopped
 volumes:
-  - ${CONFIG}/multi-room/spotifyjessie:/audio/pipe
+  - ${CONFIG}/multiroom-audio/spotifyjessie:/audio/pipe
 environment:
   - SPOTIFY_NAME=Apartment
   - SPOTIFY_BITRATE=320
