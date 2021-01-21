@@ -1,0 +1,10 @@
+build: /config/librespot
+image: mopidy:jessie
+restart: unless-stopped
+volumes:
+  - ${CONFIG}/multi-room/spotifyjessie:/audio/pipe
+environment:
+  - SPOTIFY_NAME=Apartment
+  - SPOTIFY_BITRATE=320
+ports:
+  - "6969:6969"
