@@ -6,5 +6,7 @@ volumes:
 environment:
   - SPOTIFY_NAME=Apartment
   - SPOTIFY_BITRATE=320
+  - SPOTIFY_USER=${spotify_user}
+  - SPOTIFY_PASS=${spotify_password}
 ports:
   - "6969:6969"
