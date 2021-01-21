@@ -1,5 +1,4 @@
-image: linuxserver/linuxserver/daapd
-container_name: daapd
+image: ghcr.io/linuxserver/daapd
 network_mode: host
 environment:
   - PGID=${GROUP_ID}
