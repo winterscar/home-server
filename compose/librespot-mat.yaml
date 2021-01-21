@@ -1,5 +1,5 @@
 build: /config/librespot
-image: librespot:jessie
+image: librespot
 restart: unless-stopped
 volumes:
   - ${CONFIG}/multiroom-audio/spotifymat:/audio/pipe
