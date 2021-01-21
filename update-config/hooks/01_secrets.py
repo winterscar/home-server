@@ -10,7 +10,8 @@ with open("/config/secrets.yaml", 'r') as stream:
   secrets = yaml.safe_load(stream)
 
 for filepath in secrets:
-  with open("/config/" + filepath, 'r') as config:
+  filepath = "/config/" + filepath
+  with open(filepath, 'r') as config:
     configdata = config.read()
   for key in secrets[filepath]:
     configdata = configdata.replace(r"${" + key + r"}", str(secrets[filepath][key]))
