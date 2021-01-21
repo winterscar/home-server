@@ -1,0 +1,9 @@
+image: linuxserver/linuxserver/daapd
+container_name: daapd
+network_mode: host
+environment:
+  - PGID=${GROUP_ID}
+  - PUID=${USER_ID}
+volumes:
+  - ${CONFIG}/multiroom-audio/spotifymat:/music/spotify
+restart: unless-stopped
