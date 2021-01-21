@@ -4,6 +4,6 @@ environment:
   - PGID=${GROUP_ID}
   - PUID=${USER_ID}
 volumes:
-  - ${CONFIG}/multiroom-audio/spotifymat:/music/spotify
-  - ${CONFIG}/daapd/forked-daapd-mat.conf:/config/forked-daapd.conf
+  - ${CONFIG}/multiroom-audio/spotifyjessie:/music/spotify
+  - ${CONFIG}/daapd/forked-daapd-jessie.conf:/config/forked-daapd.conf
 restart: unless-stopped
