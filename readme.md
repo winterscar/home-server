@@ -67,7 +67,7 @@ Application services are run by `docker-compose`. However, no `docker-compose.ya
 Making changes to Application services is very straight forward. Simply edit, add or delete files to the `/compose` directory, and push. The home server will automatically pull changes to the master branch and apply them.
 
 ## Build Pipeline
-One of the system-services defined on the home server is `update-config`. Its job is to watch the git repository (via a github webhook) and then update the running containers to match the configuration.
+One of the system-services defined on the home server is `update-config`. Its job is to watch the git repository (via a GitHub webhook) and then update the running containers to match the configuration.
 
 The pipeline consists of a set of steps, triggered by a `push` to the master branch.
 
