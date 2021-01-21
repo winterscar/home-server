@@ -1,5 +1,5 @@
 build: /config/librespot
-image: mopidy:jessie
+image: librespot:jessie
 restart: unless-stopped
 volumes:
   - ${CONFIG}/multi-room/spotifyjessie:/audio/pipe
