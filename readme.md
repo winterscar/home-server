@@ -80,14 +80,24 @@ Because we're pulling first, it is possible to _override the subsequent pipeline
 > docker restart update-config
 ```
 
-### 01_compose.py
+### 01_secrets.py
+In order to facilitate the management of secrets, you can put them in the secrets.yaml file directly on the server according to the following pattern:
+
+```yaml
+path/to/file/with/secrets.txt:
+  secret_key: secret_value
+  another_secret: another_value
+```
+Then, in the file `path/to/file/with/secrets.txt`, simply replace any sensitive data with `${secret_key}` and the secret will be injected into the file
+
+### 02_compose.py
 > Turns the various `compose/*.yaml` files into a single `docker-compose.yaml` file. 
 
 Additionally, this script adds some augmentations to each service, such as defining a `TZ` variable. This is a useful place to make changes that affect all or many of the system services, rather than having to modify each .yaml file.
 
 If you need to add anything that is _not_ as service to the compose file, you can add it to _compose.yaml, which forms the basis of the final file.
 
-### 02_restart.py
+### 03_restart.py
 > Ensures containers that were edited are recreated or restarted on the home-server.
 
 This script uses the changes data passed in from the webhook to ascertain which files have been changed. If any of the the `compose/*.yaml` files have, we can simply run `docker-compose up` and let comose do the work of figuring out _what_ needs to be recreated. 
