@@ -46,3 +46,7 @@
   friendly_name: bedroom_light
 '0x00158d00049da6f5':
   friendly_name: server_room_door_sensor
+'0x588e81fffeb5acbd':
+  friendly_name: misc_power_switch
+'0xbc33acfffe251066':
+  friendly_name: 'kitchen_motion_sensor'
