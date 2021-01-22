@@ -5,5 +5,5 @@ environment:
   - PUID=${USER_ID}
 volumes:
   - ${CONFIG}/multiroom-audio/spotifyjessie:/music/spotify
-  - ${CONFIG}/daapd/jessie:/config
+  - ${CONFIG}/daapd/jessie.conf:/config/forked-daapd.conf
 restart: unless-stopped
