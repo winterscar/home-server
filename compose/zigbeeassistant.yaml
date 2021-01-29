@@ -10,3 +10,4 @@ labels:
   - "traefik.http.services.zigbeeassistant.loadbalancer.server.port=80"
   - "traefik.http.routers.zigbeeassistant.tls=true"
   - "traefik.http.routers.zigbeeassistant.tls.certresolver=letsencrypt"
+  - "traefik.http.middlewares.zigbee-auth.basicauth.users=${http_auth_creds}"
