@@ -1,6 +1,6 @@
 media_player:
   - platform: onkyo
-    host: 10.10.10.22
+    host: 192.168.1.105
     name: Amplifier
     max_volume: 75
     sources:
