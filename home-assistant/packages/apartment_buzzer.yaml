@@ -18,7 +18,7 @@ script:
           actions:
             - action: "open_building_door" # The key you are sending for the event
               title: "Open door" # The button title
-    - service: notify.mobile_app_winter_is_coming
+    - service: notify.mobile_app_jessies_phone
       data:
         title: "Someone's at the door!"
         message: "There's someone at the building door. Tap 'Open Door' to let them in."
