@@ -241,3 +241,15 @@
     service: script.turn_on_lights
     data:
       entity_id: light.corridor_lights
+- id: office_light_fixer
+  alias: Turn the office light relay on if it turns off
+  trigger: 
+    - platform: state
+      entity_id: switch.office_light_switch_switch_left
+      to: 'off'
+  action:
+    - delay:
+        minutes: 1
+    - service: switch.turn_on
+      data:
+        entity_id: switch.office_light_switch_switch_left
