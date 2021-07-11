@@ -1,6 +1,7 @@
 
 # -------- Corridor lights -------------------------------------------------------------------------
 - alias: Turn on corridor light when there is movement
+  id: corridor_motion_on
   trigger:
     platform: state
     entity_id: binary_sensor.corridor_motion_occupancy
@@ -11,6 +12,7 @@
       entity_id: light.corridor_lights
 
 - alias: Turn off corridor light after movement
+  id: corridor_motion_off
   trigger:
     platform: state
     entity_id: binary_sensor.corridor_motion_occupancy
@@ -50,6 +52,7 @@
 # --------------------------------------------------------------------------------------------------
 
 - alias: Set motion helper to false at sunrise
+  id: motion_helper_false_sunrise
   trigger:
     platform: sun
     event: sunrise
@@ -58,6 +61,7 @@
       entity_id: input_boolean.helper_morning_covers_opened
 
 - alias: Open covers in the morning
+  id: open_covers_in_morning
   trigger:
     platform: state
     entity_id: binary_sensor.corridor_motion_occupancy
@@ -77,6 +81,7 @@
       entity_id: input_boolean.helper_morning_covers_opened
   
 - alias: Stop living room curtain if the door is open
+  id: stop_living_room_curtain
   trigger:
     platform: state
     entity_id: cover.living_room_curtain
